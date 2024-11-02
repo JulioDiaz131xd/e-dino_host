@@ -23,7 +23,7 @@ session_start();
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
             <h1>E-Dino</h1>
-            <p>Aprende a tu modo... A tu rit</p>
+            <p>Aprende a tu modo... A tu ritmo.</p>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <button id="hero-classes-btn" onclick="window.location.href='./public/dashboard.php'">Ir a mis clases</button>
             <?php else: ?>
