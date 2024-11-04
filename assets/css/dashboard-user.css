@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #4a90e2; /* Color principal */
-    --secondary-color: #34a853; /* Color secundario */
+    --primary-color: #4a90e2; /*  secColor principal */
+    --secondary-color: #34a853; /* Colorundario */
     --background-color-start: #e0eafc; /* Color inicial del degradado */
     --background-color-end: #cfdef3; /* Color final del degradado */
     --text-color: #202124; /* Color del texto */

@@ -1,6 +1,5 @@
 <?php
 require_once 'bd.php';
-
 class User {
     private $db;
     private $conn;
