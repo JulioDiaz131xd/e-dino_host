@@ -23,17 +23,16 @@ session_start();
     <main>
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
-            <div class="render">
-                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
-                <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
-            </div>
+
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
+
             <?php if (isset($_SESSION['user_id'])): ?>
-                <button id="hero-classes-btn" class="hero-btn" onclick="window.location.href='./public/dashboard.php'">Ir a mis clases</button>
+                <button id="hero-classes-btn" onclick="window.location.href='./public/dashboard.php'">Ir a mis clases</button>
             <?php else: ?>
-                <button id="hero-register-btn" class="hero-btn" onclick="window.location.href='./public/register.php'">Regístrate</button>
+                <button id="hero-register-btn" onclick="window.location.href='./public/register.php'">Regístrate</button>
             <?php endif; ?>
         </section>
-
 
         <!-- Sección Beneficios -->
         <section class="benefits slide-left-scroll">
