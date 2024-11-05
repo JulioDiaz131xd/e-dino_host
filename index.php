@@ -68,7 +68,7 @@ session_start();
                 <p>Accede a los cursos y programas en cualquier momento, desde cualquier lugar.</p>
             </div>
             <div class="benefit-item">
-                <img src="./assets/images/benefit2.svg" alt="Beneficio 2">
+                <img src="https://blog.comparasoftware.com/wp-content/uploads/2020/07/Soporte-Tecnico-presencial-1.png" alt="Beneficio 2">
                 <h3>Soporte 24/7</h3>
                 <p>Siempre tendrás asistencia, ya sea técnica o académica, en cualquier momento.</p>
             </div>
