@@ -18,36 +18,39 @@ session_start();
     <?php
     include './includes/navbar.php';
     ?>
-<header class="header">
-    <div class="header-container">
-        <a href="/../index.php" class="logo">E-Dino</a>
-        <div class="header-buttons">
-        <button id="theme-toggle" class="header-buttons button">Cambiar Tema</button>
-            <?php
-            $currentPage = basename($_SERVER['PHP_SELF']);
-            if (!in_array($currentPage, ['login.php', 'register.php'])):
-                if (isset($_SESSION['user_id'])): ?>
-                    <form action="/public/logout.php" method="post" class="logout-form">
-                        <button type="submit" class="header-btn">Logout</button>
-                    </form>
-                    <div class="user-info"
-                        <span class="user-name"><?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
-                    </div>
-                <?php else: ?>
-                    <button onclick="window.location.href='/../public/login.php'" class="header-btn">Sign in</button>
-                    <button onclick="window.location.href='/../public/register.php'" class="header-btn">Sing up</button>
-                <?php endif; 
-            endif; ?>
+    <header class="header">
+        <div class="header-container">
+            <a href="/../index.php" class="logo">E-Dino</a>
+            <div class="header-buttons">
+                <button id="theme-toggle" class="header-btn">
+                    <img id="theme-icon" src="sun-icon.png" alt="Toggle Theme" />
+                </button>
+                <?php
+                $currentPage = basename($_SERVER['PHP_SELF']);
+                if (!in_array($currentPage, ['login.php', 'register.php'])):
+                    if (isset($_SESSION['user_id'])): ?>
+                        <form action="/public/logout.php" method="post" class="logout-form">
+                            <button type="submit" class="header-btn">Logout</button>
+                        </form>
+                        <div class="user-info">
+                            <span class="user-name"><?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
+                        </div>
+                    <?php else: ?>
+                        <button onclick="window.location.href='/../public/login.php'" class="header-btn">Sign in</button>
+                        <button onclick="window.location.href='/../public/register.php'" class="header-btn">Sign up</button>
+                <?php endif;
+                endif; ?>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
+
 
     <main>
 
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <button id="hero-classes-btn" onclick="window.location.href='./public/dashboard.php'">Ir a mis clases</button>
             <?php else: ?>
@@ -140,15 +143,27 @@ session_start();
                 });
             });
         });
-    document.addEventListener('DOMContentLoaded', function() {
-        const toggleButton = document.querySelector('#theme-toggle');
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.querySelector('#theme-toggle');
 
-        // Cambiar el tema cuando se hace clic en el botón
-        toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
+            // Cambiar el tema cuando se hace clic en el botón
+            toggleButton.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+            });
         });
-    });
+        const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
 
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Cambiar el ícono según el tema
+    if (document.body.classList.contains('dark-mode')) {
+        themeIcon.src = 'moon-icon.png';  // Ícono de luna para modo oscuro
+    } else {
+        themeIcon.src = 'sun-icon.png';   // Ícono de sol para modo claro
+    }
+});
 
     </script>
 </body>
