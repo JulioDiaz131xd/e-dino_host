@@ -21,6 +21,8 @@ session_start();
     ?>
 
     <main>
+    <button id="theme-toggle" class="header-buttons button">Cambiar Tema</button>
+
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
@@ -116,6 +118,16 @@ session_start();
                 });
             });
         });
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.querySelector('#theme-toggle');
+
+        // Cambiar el tema cuando se hace clic en el botón
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    });
+
+
     </script>
 </body>
 

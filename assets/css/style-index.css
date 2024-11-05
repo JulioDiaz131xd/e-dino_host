@@ -1,10 +1,28 @@
+/* Variables de color */
+:root {
+    --color-background-light: #f9f9f9;
+    --color-text-light: #333;
+    --color-background-dark: #000000;
+    --color-text-dark: #ffffff;
+    --color-accent-light: #007bff;
+    --color-accent-dark: rgb(139, 205, 58); /* Color alternativo para modo oscuro */
+    --color-button-light: #007bff;
+    --color-button-dark: rgb(139, 205, 58);
+}
+
 /* General Styles */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
 }
 
 a {
@@ -34,9 +52,8 @@ header {
     transition: background-color 0.3s ease;
 }
 
-header.sticky {
-    background-color: #007bff;
-    color: #fff;
+header.dark-mode {
+    background-color: var(--color-background-dark);
 }
 
 .header-container {
@@ -48,12 +65,16 @@ header.sticky {
 .logo {
     font-size: 2em;
     font-weight: bold;
-    color: #007bff;
+    color: var(--color-accent-light);
     transition: color 0.3s ease;
 }
 
+body.dark-mode .logo {
+    color: var(--color-accent-dark);
+}
+
 .header-buttons button {
-    background-color: #007bff;
+    background-color: var(--color-button-light);
     color: #fff;
     padding: 10px 15px;
     border-radius: 8px;
@@ -62,8 +83,16 @@ header.sticky {
     transition: background-color 0.3s ease;
 }
 
+body.dark-mode .header-buttons button {
+    background-color: var(--color-button-dark);
+}
+
 .header-buttons button:hover {
     background-color: #0056b3;
+}
+
+body.dark-mode .header-buttons button:hover {
+    background-color: rgb(102, 150, 43);
 }
 
 /* Hero Section */
@@ -75,8 +104,8 @@ header.sticky {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #000000, #000000);
-    color: #fff;
+    background: linear-gradient(45deg, var(--color-background-dark), var(--color-background-dark));
+    color: var(--color-text-dark);
     text-align: center;
     animation: fadeIn 2s ease-in-out forwards;
 }
@@ -95,13 +124,17 @@ header.sticky {
 }
 
 .hero button {
-    background-color: #ff0076;
+    background-color: var(--color-button-light);
     color: #fff;
     padding: 15px 30px;
     border-radius: 25px;
     font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
     animation: fadeInUp 2s ease-in-out forwards;
+}
+
+body.dark-mode .hero button {
+    background-color: var(--color-button-dark);
 }
 
 .hero button:hover {
@@ -115,6 +148,10 @@ header.sticky {
     background-color: #f1f1f1;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+body.dark-mode .benefits {
+    background-color: #222;
 }
 
 .benefits h2 {
@@ -132,6 +169,11 @@ header.sticky {
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .benefit-item {
+    background-color: #333;
+    color: var(--color-text-dark);
 }
 
 .benefit-item:hover {
@@ -154,12 +196,20 @@ header.sticky {
     color: #666;
 }
 
+body.dark-mode .benefit-item p {
+    color: #aaa;
+}
+
 /* Testimonials Section */
 .testimonials {
     padding: 100px 20px;
     background-color: #fff;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+body.dark-mode .testimonials {
+    background-color: #333;
 }
 
 .testimonials-slider {
@@ -176,6 +226,11 @@ header.sticky {
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+}
+
+body.dark-mode .testimonial-item {
+    background-color: #444;
+    color: var(--color-text-dark);
 }
 
 .testimonial-item:hover {
@@ -195,23 +250,35 @@ blockquote {
     margin-bottom: 20px;
 }
 
+body.dark-mode blockquote {
+    color: #ccc;
+}
+
 .testimonial-item h4 {
     font-size: 1.3em;
     margin-top: 10px;
 }
 
 .testimonial-item span {
-    color: #007bff;
+    color: var(--color-accent-light);
     font-weight: bold;
+}
+
+body.dark-mode .testimonial-item span {
+    color: var(--color-accent-dark);
 }
 
 /* Call to Action Section */
 .cta {
-    background-color: #007bff;
+    background-color: var(--color-accent-light);
     color: #fff;
     padding: 80px 20px;
     text-align: center;
     animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+body.dark-mode .cta {
+    background-color: var(--color-accent-dark);
 }
 
 .cta h2 {
@@ -225,12 +292,16 @@ blockquote {
 }
 
 .cta button {
-    background-color: #ff0076;
+    background-color: var(--color-button-light);
     color: #fff;
     padding: 15px 40px;
     border-radius: 25px;
     font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-mode .cta button {
+    background-color: var(--color-button-dark);
 }
 
 .cta button:hover {
@@ -243,6 +314,10 @@ blockquote {
     padding: 80px 20px;
     background-color: #f1f1f1;
     animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+body.dark-mode .faq {
+    background-color: #222;
 }
 
 .faq h2 {
@@ -267,6 +342,11 @@ blockquote {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+body.dark-mode .faq-item {
+    background-color: #333;
+    color: var(--color-text-dark);
+}
+
 .faq-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -274,12 +354,16 @@ blockquote {
 
 .faq-item h3 {
     font-size: 1.5em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .faq-item p {
     font-size: 1em;
     color: #666;
+}
+
+body.dark-mode .faq-item p {
+    color: #aaa;
 }
 
 /* Animations */
