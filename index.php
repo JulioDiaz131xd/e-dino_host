@@ -60,6 +60,7 @@ session_start();
                 <blockquote>“La plataforma es intuitiva y fácil de usar. Estoy muy satisfecho con el contenido y la forma en que se presenta.”</blockquote>
                 <h4>María López</h4>
                 <span>Docente</span>
+                
             </div>
         </section>
 
@@ -68,6 +69,12 @@ session_start();
             <h2>Únete hoy</h2>
             <p>No pierdas la oportunidad de ser parte de la revolución educativa. ¡Inscríbete ahora!</p>
             <button onclick="window.location.href='./public/register.php'">Empezar</button>
+        </section>
+
+
+        <section class="cta slide-right-scroll">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/iqY31g5XVr8nmtia/scene.splinecode"></spline-viewer>
         </section>
     </main>
 
