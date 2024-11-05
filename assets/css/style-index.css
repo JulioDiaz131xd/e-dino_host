@@ -4,9 +4,9 @@
     --color-text-light: #333;
     --color-background-dark: #000000;
     --color-text-dark: #ffffff;
-    --color-accent-light: #007bff;
+    --color-accent-light: #8BCD3A;
     --color-accent-dark: rgb(139, 205, 58); /* Color alternativo para modo oscuro */
-    --color-button-light: #007bff;
+    --color-button-light: #8BCD3A;
     --color-button-dark: rgb(139, 205, 58);
 }
 
