@@ -23,10 +23,8 @@ session_start();
     <main>
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
-
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
         <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
-
             <?php if (isset($_SESSION['user_id'])): ?>
                 <button id="hero-classes-btn" onclick="window.location.href='./public/dashboard.php'">Ir a mis clases</button>
             <?php else: ?>
