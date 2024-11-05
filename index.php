@@ -71,11 +71,6 @@ session_start();
             <button onclick="window.location.href='./public/register.php'">Empezar</button>
         </section>
 
-
-        <section class="cta slide-right-scroll">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/iqY31g5XVr8nmtia/scene.splinecode"></spline-viewer>
-        </section>
     </main>
 
     <?php include './includes/footer.php'; ?>
