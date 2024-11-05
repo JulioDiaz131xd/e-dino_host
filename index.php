@@ -23,7 +23,7 @@ session_start();
             <a href="/../index.php" class="logo">E-Dino</a>
             <div class="header-buttons">
                 <button id="theme-toggle" class="header-btn">
-                    <img id="theme-icon" src="sun-icon.png" alt="Toggle Theme" />
+                    <img id="theme-icon" src="/assets/images/blackmode.png" alt="/assets/images/darkmode.png" />
                 </button>
                 <?php
                 $currentPage = basename($_SERVER['PHP_SELF']);
