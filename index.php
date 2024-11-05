@@ -151,7 +151,6 @@ session_start();
                 document.body.classList.toggle('dark-mode');
             });
         });
-        
     </script>
 </body>
 
