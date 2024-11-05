@@ -21,6 +21,10 @@ button {
     cursor: pointer;
     border: none;
 }
+.render {
+    flex: 1; /* Permite que este div ocupe el espacio disponible */
+    overflow: hidden; /* Evita el desbordamiento */
+}
 
 /* Header */
 header {
