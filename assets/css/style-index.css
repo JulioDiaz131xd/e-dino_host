@@ -103,7 +103,7 @@ body.dark-mode .header-buttons button:hover {
 }
 
 #theme-icon {
-    width: 50px;
+    width: 20px;
     height: auto;
     transition: transform 0.3s ease;
 }
