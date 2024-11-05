@@ -151,20 +151,7 @@ session_start();
                 document.body.classList.toggle('dark-mode');
             });
         });
-        const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.getElementById('theme-icon');
-
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    // Cambiar el ícono según el tema
-    if (document.body.classList.contains('dark-mode')) {
-        themeIcon.src = 'moon-icon.png';  // Ícono de luna para modo oscuro
-    } else {
-        themeIcon.src = 'sun-icon.png';   // Ícono de sol para modo claro
-    }
-});
-
+        
     </script>
 </body>
 
