@@ -22,8 +22,9 @@ button {
     border: none;
 }
 .render {
-    flex: 1; /* Permite que este div ocupe el espacio disponible */
-    overflow: hidden; /* Evita el desbordamiento */
+    flex: 1;
+    overflow: hidden;
+    z-index: 1;
 }
 
 /* Header */
@@ -99,6 +100,10 @@ header.sticky {
 }
 
 .hero button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
     background-color: #ff0076;
     color: #fff;
     padding: 15px 30px;

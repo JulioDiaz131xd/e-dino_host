@@ -13,6 +13,7 @@ session_start();
     <link rel="icon" href="./assets/images/logo.ico">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.21/build/spline-viewer.js"></script>
 </head>
+
 <body>
     <?php
     include './includes/header.php';
@@ -23,15 +24,16 @@ session_start();
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
             <div class="render">
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
-        <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
-        </div>
+                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
+                <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
+            </div>
             <?php if (isset($_SESSION['user_id'])): ?>
-                <button id="hero-classes-btn" onclick="window.location.href='./public/dashboard.php'">Ir a mis clases</button>
+                <button id="hero-classes-btn" class="hero-btn" onclick="window.location.href='./public/dashboard.php'">Ir a mis clases</button>
             <?php else: ?>
-                <button id="hero-register-btn" onclick="window.location.href='./public/register.php'">Regístrate</button>
+                <button id="hero-register-btn" class="hero-btn" onclick="window.location.href='./public/register.php'">Regístrate</button>
             <?php endif; ?>
         </section>
+
 
         <!-- Sección Beneficios -->
         <section class="benefits slide-left-scroll">
@@ -62,7 +64,7 @@ session_start();
                 <blockquote>“La plataforma es intuitiva y fácil de usar. Estoy muy satisfecho con el contenido y la forma en que se presenta.”</blockquote>
                 <h4>María López</h4>
                 <span>Docente</span>
-                
+
             </div>
         </section>
 
@@ -79,7 +81,7 @@ session_start();
 
     <!-- Animaciones de Scroll y JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const observerOptions = {
                 threshold: 0.2,
             };
@@ -109,7 +111,7 @@ session_start();
 
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
@@ -119,4 +121,5 @@ session_start();
         });
     </script>
 </body>
+
 </html>
