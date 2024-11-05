@@ -28,14 +28,14 @@ session_start();
             if (!in_array($currentPage, ['login.php', 'register.php'])):
                 if (isset($_SESSION['user_id'])): ?>
                     <form action="/public/logout.php" method="post" class="logout-form">
-                        <button type="submit" class="header-btn">Cerrar sesion</button>
+                        <button type="submit" class="header-btn">Logout</button>
                     </form>
                     <div class="user-info"
                         <span class="user-name"><?php echo htmlspecialchars($_SESSION['nombre']); ?></span>
                     </div>
                 <?php else: ?>
-                    <button onclick="window.location.href='/../public/login.php'" class="header-btn">Iniciar sesion</button>
-                    <button onclick="window.location.href='/../public/register.php'" class="header-btn">Registrarse</button>
+                    <button onclick="window.location.href='/../public/login.php'" class="header-btn">Sign in</button>
+                    <button onclick="window.location.href='/../public/register.php'" class="header-btn">Sing up</button>
                 <?php endif; 
             endif; ?>
         </div>
