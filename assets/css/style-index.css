@@ -115,7 +115,7 @@ body.dark-mode .header-buttons button:hover {
 /* Icono de cambio de tema */
 #theme-icon {
     width: 24px; /* Ajustado para tamaño estándar */
-    height: auto;
+    height: 24px;
     transition: transform 0.3s ease;
 }
 
