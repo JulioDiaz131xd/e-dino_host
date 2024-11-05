@@ -42,8 +42,8 @@ button {
 
 /* Header */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    background-color: var(--color-background-light); /* Cambiado a variable */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajustado para sombra sutil */
     position: fixed;
     width: 100%;
     top: 0;
@@ -52,29 +52,35 @@ header {
     transition: background-color 0.3s ease;
 }
 
-header.dark-mode {
-    background-color: var(--color-background-dark);
+/* Modo oscuro para el header */
+body.dark-mode header {
+    background-color: var(--color-background-dark); /* Fondo en modo oscuro */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Ajuste de sombra en modo oscuro */
 }
 
+/* Container del header */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Logo */
 .logo {
     font-size: 2em;
     font-weight: bold;
-    color: var(--color-accent-light);
+    color: var(--color-accent-light); /* Color para modo claro */
     transition: color 0.3s ease;
 }
 
+/* Logo en modo oscuro */
 body.dark-mode .logo {
-    color: var(--color-accent-dark);
+    color: var(--color-accent-dark); /* Color para modo oscuro */
 }
 
+/* Botones en el header */
 .header-buttons button {
-    background-color: var(--color-button-light);
+    background-color: var(--color-button-light); /* Fondo en modo claro */
     color: #fff;
     padding: 10px 15px;
     border-radius: 8px;
@@ -83,18 +89,22 @@ body.dark-mode .logo {
     transition: background-color 0.3s ease;
 }
 
+/* Botones en modo oscuro */
 body.dark-mode .header-buttons button {
-    background-color: var(--color-button-dark);
+    background-color: var(--color-button-dark); /* Fondo en modo oscuro */
 }
 
+/* Hover de los botones */
 .header-buttons button:hover {
-    background-color: #69a32b;
+    background-color: #69a32b; /* Hover en modo claro */
 }
 
+/* Hover de los botones en modo oscuro */
 body.dark-mode .header-buttons button:hover {
-    background-color: rgb(102, 150, 43);
+    background-color: rgb(102, 150, 43); /* Hover en modo oscuro */
 }
 
+/* Botón de cambio de tema */
 #theme-toggle {
     background: none;
     border: none;
@@ -102,16 +112,17 @@ body.dark-mode .header-buttons button:hover {
     cursor: pointer;
 }
 
+/* Icono de cambio de tema */
 #theme-icon {
-    width: 50px;
-    height: auto;
+    width: 24px; /* Ajustado para tamaño estándar */
+    height: 24px;
     transition: transform 0.3s ease;
 }
 
+/* Transformación del icono en modo oscuro */
 body.dark-mode #theme-icon {
-    transform: rotate(180deg);
+    transform: rotate(180deg); /* Efecto de rotación para indicar cambio de modo */
 }
-
 
 /* Hero Section */
 .hero {
