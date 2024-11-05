@@ -21,7 +21,6 @@ session_start();
     ?>
 
     <main>
-    <button id="theme-toggle" class="header-buttons button">Cambiar Tema</button>
 
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
@@ -36,6 +35,8 @@ session_start();
 
         <!-- Sección Beneficios -->
         <section class="benefits slide-left-scroll">
+        <button id="theme-toggle" class="header-buttons button">Cambiar Tema</button>
+
             <h2>Beneficios de E-Dino</h2>
             <div class="benefit-item">
                 <img src="./assets/images/benefit1.svg" alt="Beneficio 1">
