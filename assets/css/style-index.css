@@ -21,11 +21,6 @@ button {
     cursor: pointer;
     border: none;
 }
-.render {
-    flex: 1;
-    overflow: hidden;
-    z-index: 1;
-}
 
 /* Header */
 header {
@@ -80,7 +75,7 @@ header.sticky {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: #fff;
     text-align: center;
     animation: fadeIn 2s ease-in-out forwards;
@@ -100,10 +95,6 @@ header.sticky {
 }
 
 .hero button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 2;
     background-color: #ff0076;
     color: #fff;
     padding: 15px 30px;
