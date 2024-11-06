@@ -303,25 +303,6 @@ body.dark-mode #theme-icon {
     animation: slideInFromRight 1.5s ease-in-out forwards;
 }
 
-.hero button {
-    background-color: var(--color-button-light);
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 25px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: fadeInUp 2s ease-in-out forwards;
-}
-
-body.dark-mode .hero button {
-    background-color: var(--color-button-dark);
-}
-
-.hero button:hover {
-    background-color: #d60064;
-    transform: scale(1.05);
-}
-
 /* Benefits Section */
 .benefits {
     padding: 80px 20px;
