@@ -10,6 +10,72 @@
     --color-button-dark: rgb(139, 205, 58);
 }
 
+/* From Uiverse.io by Randdose */
+.custom-button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: mediumspringgreen solid 0.15em;
+    border-radius: 0.25em;
+    color: mediumspringgreen;
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+  }
+  
+  .custom-button p {
+    z-index: 1;
+  }
+  
+  .custom-button:hover {
+    color: #212121;
+  }
+  
+  .custom-button:active {
+    border-color: teal;
+  }
+  
+  .custom-button::after,
+  .custom-button::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: mediumspringgreen;
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+  }
+  
+  .custom-button::before {
+    left: 0;
+    transform: translateX(-8em);
+  }
+  
+  .custom-button::after {
+    right: 0;
+    transform: translateX(8em);
+  }
+  
+  .custom-button:hover::before {
+    transform: translateX(-1em);
+  }
+  
+  .custom-button:hover::after {
+    transform: translateX(1em);
+  }
+  
+  .custom-button:active::before,
+  .custom-button:active::after {
+    background: teal;
+  }
+  
+
 /* LOGOUT BETA */ 
 .Btn {
     --black: #000000;
