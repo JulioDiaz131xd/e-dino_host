@@ -153,16 +153,21 @@ body.dark-mode .logo {
     color: var(--color-accent-dark); /* Color para modo oscuro */
 }
 
+/* Contenedor de botones en el header */
+.header-buttons {
+    display: flex; /* Para alinear en fila */
+    gap: 10px; /* Espaciado uniforme entre botones */
+}
+
 /* Botones en el header */
 .header-buttons button {
     background-color: var(--color-button-light); /* Fondo en modo claro */
     color: #fff;
     padding: 10px 15px;
     border-radius: 8px;
-    margin-left: 15px;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin-right: 20px;
+    margin: 0; /* Elimina margen adicional */
 }
 
 /* Botones en modo oscuro */

@@ -18,7 +18,7 @@ session_start();
     <?php
     include './includes/navbar.php';
     ?>
-    <!-- Sección Hero -->
+    <!-- Sección Header -->
     <header class="header">
         <div class="header-container">
             <a href="/../index.php" class="logo">E-Dino</a>
@@ -50,7 +50,6 @@ session_start();
         </div>
     </header>
     <main>
-
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
