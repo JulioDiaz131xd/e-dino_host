@@ -53,8 +53,16 @@ session_start();
 
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
+
+                <!-- Render -->
+
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
+
+
+                <!-- End Render -->
+
+
             <?php if (isset($_SESSION['user_id'])): ?>
                 <button id="button-betas" onclick="window.location.href='./public/dashboard.php'">
                     <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
