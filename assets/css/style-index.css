@@ -84,7 +84,6 @@
   .Btn:active {
     transform: translate(2px ,2px);
   }
-
 /* General Styles */
 body {
     margin: 0;
@@ -92,6 +91,7 @@ body {
     background-color: var(--color-background-light);
     color: var(--color-text-light);
     overflow-x: hidden;
+    padding-bottom: 50px; /* Espacio inferior para evitar que los botones queden ocultos */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -117,8 +117,8 @@ button {
 
 /* Header */
 header {
-    background-color: var(--color-background-light); /* Cambiado a variable */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajustado para sombra sutil */
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
@@ -129,8 +129,8 @@ header {
 
 /* Modo oscuro para el header */
 body.dark-mode header {
-    background-color: var(--color-background-dark); /* Fondo en modo oscuro */
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Ajuste de sombra en modo oscuro */
+    background-color: var(--color-background-dark);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
 
 /* Container del header */
@@ -138,51 +138,55 @@ body.dark-mode header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Logo */
 .logo {
     font-size: 2em;
     font-weight: bold;
-    color: var(--color-accent-light); /* Color para modo claro */
+    color: var(--color-accent-light);
     transition: color 0.3s ease;
 }
 
 /* Logo en modo oscuro */
 body.dark-mode .logo {
-    color: var(--color-accent-dark); /* Color para modo oscuro */
+    color: var(--color-accent-dark);
 }
 
 /* Contenedor de botones en el header */
 .header-buttons {
-    display: flex; /* Para alinear en fila */
-    gap: 10px; /* Espaciado uniforme entre botones */
+    display: flex;
+    gap: 10px;
 }
 
 /* Botones en el header */
 .header-buttons button {
-    background-color: var(--color-button-light); /* Fondo en modo claro */
+    background-color: var(--color-button-light);
     color: #fff;
     padding: 10px 15px;
     border-radius: 8px;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin: 0; /* Elimina margen adicional */
+    margin: 0;
+    z-index: 1010; /* Asegura visibilidad sobre otros elementos */
 }
 
 /* Botones en modo oscuro */
 body.dark-mode .header-buttons button {
-    background-color: var(--color-button-dark); /* Fondo en modo oscuro */
+    background-color: var(--color-button-dark);
 }
 
 /* Hover de los botones */
 .header-buttons button:hover {
-    background-color: #69a32b; /* Hover en modo claro */
+    background-color: #69a32b;
 }
 
 /* Hover de los botones en modo oscuro */
 body.dark-mode .header-buttons button:hover {
-    background-color: rgb(102, 150, 43); /* Hover en modo oscuro */
+    background-color: rgb(102, 150, 43);
 }
 
 /* Botón de cambio de tema */
@@ -195,14 +199,14 @@ body.dark-mode .header-buttons button:hover {
 
 /* Icono de cambio de tema */
 #theme-icon {
-    width: 24px; /* Ajustado para tamaño estándar */
+    width: 24px;
     height: 24px;
     transition: transform 0.3s ease;
 }
 
 /* Transformación del icono en modo oscuro */
 body.dark-mode #theme-icon {
-    transform: rotate(180deg); /* Efecto de rotación para indicar cambio de modo */
+    transform: rotate(180deg);
 }
 
 /* Hero Section */
