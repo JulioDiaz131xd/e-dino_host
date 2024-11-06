@@ -76,7 +76,7 @@
   /* hover effect button's text */
   .Btn:hover .text {
     opacity: 1;
-    width: 70%;
+    width: 50%;
     transition-duration: .3s;
     padding-right: 10px;
   }
