@@ -18,6 +18,7 @@ session_start();
     <?php
     include './includes/navbar.php';
     ?>
+    <!-- Sección Hero -->
     <header class="header">
         <div class="header-container">
             <a href="/../index.php" class="logo">E-Dino</a>
@@ -46,8 +47,6 @@ session_start();
             </div>
         </div>
     </header>
-
-
     <main>
 
         <!-- Sección Hero -->
