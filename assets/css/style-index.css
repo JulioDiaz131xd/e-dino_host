@@ -11,17 +11,19 @@
 }
 
 /* Button register-dashboard*/
+/* From Uiverse.io by gharsh11032000 */
 #button-betas {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center; /* Centra el contenido */
     gap: 4px;
-    padding: 16px 36px;
-    border: 4px solid;
+    padding: 8px 16px; /* Ajusta el padding para hacerlo más pequeño */
+    border: 2px solid;
     border-color: transparent;
-    font-size: 16px;
+    font-size: 14px; /* Tamaño de fuente más pequeño */
     background-color: inherit;
-    border-radius: 100px;
+    border-radius: 8px; /* Bordes ligeramente redondeados para mantener la forma rectangular */
     font-weight: 600;
     color: greenyellow;
     box-shadow: 0 0 0 2px greenyellow;
@@ -32,14 +34,14 @@
   
   #button-betas svg {
     position: absolute;
-    width: 24px;
+    width: 16px; /* Reduce el tamaño del ícono */
     fill: greenyellow;
     z-index: 9;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
   #button-betas .arr-1 {
-    right: 16px;
+    right: 8px; /* Ajusta la posición de las flechas */
   }
   
   #button-betas .arr-2 {
@@ -51,8 +53,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
+    width: 10px; /* Reduce el tamaño del círculo */
+    height: 10px;
     background-color: greenyellow;
     border-radius: 50%;
     opacity: 0;
@@ -62,14 +64,14 @@
   #button-betas .text {
     position: relative;
     z-index: 1;
-    transform: translateX(-12px);
+    transform: translateX(-8px); /* Ajusta el desplazamiento del texto */
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   }
   
   #button-betas:hover {
-    box-shadow: 0 0 0 12px transparent;
+    box-shadow: 0 0 0 8px transparent; /* Reduce el tamaño de la sombra */
     color: #212121;
-    border-radius: 12px;
+    border-radius: 8px; /* Mantén la forma rectangular */
   }
   
   #button-betas:hover .arr-1 {
@@ -77,11 +79,11 @@
   }
   
   #button-betas:hover .arr-2 {
-    left: 16px;
+    left: 8px;
   }
   
   #button-betas:hover .text {
-    transform: translateX(12px);
+    transform: translateX(8px); /* Ajusta el desplazamiento del texto */
   }
   
   #button-betas:hover svg {
@@ -90,14 +92,15 @@
   
   #button-betas:active {
     scale: 0.95;
-    box-shadow: 0 0 0 4px greenyellow;
+    box-shadow: 0 0 0 2px greenyellow; /* Reduce el tamaño de la sombra cuando se activa */
   }
   
   #button-betas:hover .circle {
-    width: 220px;
-    height: 220px;
+    width: 100px; /* Reduce el tamaño del círculo */
+    height: 100px;
     opacity: 1;
   }
+  
   
 
 /* LOGOUT BETA */ 
