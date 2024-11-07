@@ -56,9 +56,6 @@ session_start();
 
                 <!-- Render -->
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
-            <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
-            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
-
             <spline-viewer id="spline-viewer" url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
 
             <script>
