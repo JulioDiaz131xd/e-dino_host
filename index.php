@@ -55,9 +55,24 @@ session_start();
         <section class="hero fade-in-scroll">
 
                 <!-- Render -->
-
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
+
+            <spline-viewer id="spline-viewer" url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
+
+            <script>
+            // Ajustar el tamaño y posición del visualizador después de que se cargue el DOM
+        window.addEventListener('DOMContentLoaded', (event) => {
+        const viewer = document.getElementById('spline-viewer');
+        viewer.style.position = 'relative';
+        viewer.style.top = '-10px'; // Ajusta para desplazar hacia arriba
+        viewer.style.height = 'calc(100vh - 150px)'; // Ajusta la altura para dejar espacio
+        viewer.style.display = 'block';
+        viewer.style.margin = '0 auto'; // Centrado opcional
+        });
+            </script>
+
 
 
                 <!-- End Render -->
