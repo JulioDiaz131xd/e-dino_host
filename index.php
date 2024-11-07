@@ -27,7 +27,7 @@ session_start();
                     <img id="theme-icon" src="/assets/images/dark-icon.png" alt="/assets/images/dark-icon.png" />
                 </button>
 
-                <p class="component-title">iOS Switch</p>
+                <p class="component-title"></p>
 
                 <div class="container">
                     <input type="checkbox" class="checkbox" id="checkbox">
