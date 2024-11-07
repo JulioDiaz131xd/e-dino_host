@@ -24,6 +24,20 @@ session_start();
                 <button id="theme-toggle" class="header-btn">
                     <img id="theme-icon" src="/assets/images/dark-icon.png" alt="/assets/images/dark-icon.png" />
                 </button>
+            </div>
+            </div>
+            <div>
+            <p class="component-title">iOS Switch</p>
+
+              <div class="container">
+                <input type="checkbox" class="checkbox" id="checkbox">
+               <label class="switch" for="checkbox">
+              <span class="slider"></span>
+             </label>
+            </div>
+            </div>
+
+
                 <?php
                 $currentPage = basename($_SERVER['PHP_SELF']);
                 if (!in_array($currentPage, ['login.php', 'register.php'])):
