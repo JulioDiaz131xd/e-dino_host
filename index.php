@@ -3,7 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@ session_start();
     <link rel="icon" href="./assets/images/logo.ico">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.21/build/spline-viewer.js"></script>
 </head>
-
 <body>
     <?php
     include './includes/navbar.php';
@@ -50,16 +48,12 @@ session_start();
         </div>
     </header>
     <main>
-
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
-
             <!-- Render -->
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
             <spline-viewer id="spline-viewer" url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
             <!-- End Render -->
-
-
             <?php if (isset($_SESSION['user_id'])): ?>
                 <button id="button-betas" onclick="window.location.href='./public/dashboard.php'">
                     <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +84,6 @@ session_start();
         </section>
         <!-- Sección Beneficios -->
         <section class="benefits slide-left-scroll">
-
             <h2>Beneficios de E-Dino</h2>
             <div class="benefit-item">
                 <img src="./assets/images/benefit1.svg" alt="Beneficio 1">
@@ -103,7 +96,6 @@ session_start();
                 <p>Siempre tendrás asistencia, ya sea técnica o académica, en cualquier momento.</p>
             </div>
         </section>
-
         <!-- Sección Testimonios -->
         <section class="testimonials zoom-in-scroll">
             <h2>Lo que dicen nuestros usuarios</h2>
@@ -118,80 +110,17 @@ session_start();
                 <blockquote>“La plataforma es intuitiva y fácil de usar. Estoy muy satisfecho con el contenido y la forma en que se presenta.”</blockquote>
                 <h4>María López</h4>
                 <span>Docente</span>
-
             </div>
         </section>
-
         <!-- Sección Call to Action -->
         <section class="cta slide-right-scroll">
             <h2>Únete hoy</h2>
             <p>No pierdas la oportunidad de ser parte de la revolución educativa. ¡Inscríbete ahora!</p>
             <button onclick="window.location.href='./public/register.php'">Empezar</button>
         </section>
-
     </main>
-
     <?php include './includes/footer.php'; ?>
-
-    <!-- Animaciones de Scroll y JS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                threshold: 0.2,
-            };
-
-            const scrollObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in-scroll, .slide-left-scroll, .slide-right-scroll, .zoom-in-scroll').forEach(section => {
-                scrollObserver.observe(section);
-            });
-
-            const header = document.querySelector('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    header.classList.add('sticky');
-                } else {
-                    header.classList.remove('sticky');
-                }
-            });
-
-            // Smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleButton = document.querySelector('#theme-toggle');
-
-            // Cambiar el tema cuando se hace clic en el botón
-            toggleButton.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-            });
-        });
-
-        // Ajustar el tamaño y posición del visualizador después de que se cargue el DOM
-        window.addEventListener('DOMContentLoaded', (event) => {
-            const viewer = document.getElementById('spline-viewer');
-            viewer.style.position = 'relative';
-            viewer.style.top = '-10px'; // Ajusta para desplazar hacia arriba
-            viewer.style.height = 'calc(100vh - 150px)'; // Ajusta la altura para dejar espacio
-            viewer.style.display = 'block';
-            viewer.style.margin = '0 auto'; // Centrado opcional
-        });
+    <script src="./assets/js/scripts.js">
     </script>
 </body>
-
 </html>
