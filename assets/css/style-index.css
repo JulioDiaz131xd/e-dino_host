@@ -27,6 +27,7 @@
     cursor: pointer;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    height: 6px;
   }
   
   #button-betas svg {
@@ -43,7 +44,6 @@
   
   #button-betas .arr-2 {
     left: -25%;
-    height: 5px;
   }
   
   #button-betas .circle {
