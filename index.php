@@ -54,25 +54,10 @@ session_start();
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
 
-                <!-- Render -->
+            <!-- Render -->
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.36/build/spline-viewer.js"></script>
             <spline-viewer id="spline-viewer" url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
-
-            <script>
-            // Ajustar el tamaño y posición del visualizador después de que se cargue el DOM
-        window.addEventListener('DOMContentLoaded', (event) => {
-        const viewer = document.getElementById('spline-viewer');
-        viewer.style.position = 'relative';
-        viewer.style.top = '-10px'; // Ajusta para desplazar hacia arriba
-        viewer.style.height = 'calc(100vh - 150px)'; // Ajusta la altura para dejar espacio
-        viewer.style.display = 'block';
-        viewer.style.margin = '0 auto'; // Centrado opcional
-        });
-            </script>
-
-
-
-                <!-- End Render -->
+            <!-- End Render -->
 
 
             <?php if (isset($_SESSION['user_id'])): ?>
@@ -94,7 +79,7 @@ session_start();
                         <path
                             d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                     </svg>
-                    <p>Registrate!</p>
+                    <p>Registrate</p>
                     <span class="circle"></span>
                     <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -103,7 +88,7 @@ session_start();
                 </button>
             <?php endif; ?>
         </section>
-                                                <!-- Sección Beneficios -->
+        <!-- Sección Beneficios -->
         <section class="benefits slide-left-scroll">
 
             <h2>Beneficios de E-Dino</h2>
@@ -195,6 +180,16 @@ session_start();
             toggleButton.addEventListener('click', () => {
                 document.body.classList.toggle('dark-mode');
             });
+        });
+
+        // Ajustar el tamaño y posición del visualizador después de que se cargue el DOM
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const viewer = document.getElementById('spline-viewer');
+            viewer.style.position = 'relative';
+            viewer.style.top = '-10px'; // Ajusta para desplazar hacia arriba
+            viewer.style.height = 'calc(100vh - 150px)'; // Ajusta la altura para dejar espacio
+            viewer.style.display = 'block';
+            viewer.style.margin = '0 auto'; // Centrado opcional
         });
     </script>
 </body>
