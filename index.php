@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@ session_start();
     <link rel="icon" href="./assets/images/logo.ico">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.21/build/spline-viewer.js"></script>
 </head>
+
 <body>
     <?php
     include './includes/navbar.php';
@@ -24,20 +26,15 @@ session_start();
                 <button id="theme-toggle" class="header-btn">
                     <img id="theme-icon" src="/assets/images/dark-icon.png" alt="/assets/images/dark-icon.png" />
                 </button>
-            </div>
-            </div>
-            <div>
-            <p class="component-title">iOS Switch</p>
 
-              <div class="container">
-                <input type="checkbox" class="checkbox" id="checkbox">
-               <label class="switch" for="checkbox">
-              <span class="slider"></span>
-             </label>
-            </div>
-            </div>
+                <p class="component-title">iOS Switch</p>
 
-
+                <div class="container">
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label class="switch" for="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
                 <?php
                 $currentPage = basename($_SERVER['PHP_SELF']);
                 if (!in_array($currentPage, ['login.php', 'register.php'])):
@@ -124,6 +121,7 @@ session_start();
                 <blockquote>“La plataforma es intuitiva y fácil de usar. Estoy muy satisfecho con el contenido y la forma en que se presenta.”</blockquote>
                 <h4>María López</h4>
                 <span>Docente</span>
+
             </div>
         </section>
         <!-- Sección Call to Action -->
@@ -137,4 +135,5 @@ session_start();
     <script src="./assets/js/scripts.js">
     </script>
 </body>
+
 </html>
