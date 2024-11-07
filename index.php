@@ -32,7 +32,7 @@ session_start();
                 <div class="container">
                     <input type="checkbox" class="checkbox" id="checkbox">
                     <label class="switch" for="checkbox">
-                        <span class="slider"></span>
+                    <span class="slider"></span>
                     </label>
                 </div>
                 <?php

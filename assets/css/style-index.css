@@ -100,7 +100,6 @@
   }
 
   /**/
-
   /* From Uiverse.io by zanina-yassine */ 
 /* Remove this container when use*/
 .component-title {
@@ -164,7 +163,7 @@
     left: calc(50% - 27px/2 + 10px);
     top: calc(50% - 27px/2);
   }
-  
+
   /* Remove this container when use*/
 .component-title {
     width: 100%;
