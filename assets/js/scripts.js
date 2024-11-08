@@ -99,4 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('load', function() {
     document.querySelector('.loader').style.display = 'none';
   });
-  
+  window.addEventListener("load", function() {
+    document.querySelector(".loader-wrapper").style.display = "none";
+  });
+    
