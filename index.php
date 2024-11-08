@@ -124,7 +124,7 @@ session_start();
         </section>
         <!-- Sección Call to Action -->
         <section class="cta slide-right-scroll">
-            <h2>Únete hoy</h2>
+            <div class="ctadiv"><h2>Únete hoy</h2>
             <p>No pierdas la oportunidad de ser parte de la revolución educativa. ¡Inscríbete ahora!</p>
            <center><button class="ui-btn" onclick="window.location.href='./public/register.php'">
                 <span>
@@ -132,6 +132,7 @@ session_start();
                 </span>
             </button>
             </center> 
+            </div>
         </section>
     </main>
     <?php include './includes/footer.php'; ?>

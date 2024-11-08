@@ -855,7 +855,6 @@ body.dark-mode .faq-item p {
     opacity: 1;
   }
   
-  /* From Uiverse.io by Galahhad */ 
 .ui-btn {
   --btn-default-bg: rgb(41, 41, 41);
   --btn-padding: 15px 20px;
@@ -868,13 +867,10 @@ body.dark-mode .faq-item p {
   --hover-btn-color: #FAC921;
   --default-btn-color: #fff;
   --font-size: 16px;
-  /* 👆 this field should not be empty */
   --font-weight: 600;
   --font-family: Menlo,Roboto Mono,monospace;
-  /* 👆 this field should not be empty */
 }
 
-/* button settings 👆 */
 
 .ui-btn {
   box-sizing: border-box;
