@@ -583,20 +583,20 @@ body.dark-mode .testimonial-item span {
 /* Call to Action Section */
 .cta {
   background-color: var(--color-accent-light);
-  color: #fff;
+  color: var(--color-text-light);
   padding: 80px 20px;
   text-align: center;
   animation: fadeInUp 1.5s ease-in-out forwards;
   --s: 150px;
-  --c1: #282c34;
-  --c2: #3e4149;
-  --c3: #525762;
-  --c4: #ff6384;
-  --c5: #36a2eb;
-  --c6: #4bc0c0;
-  --c7: #ffcc29;
-  --c8: #8e8f91;
-  --c9: #626262;
+  --c1: var(--color-background-light);
+  --c2: #c0c0c0;
+  --c3: #a9a9a9;
+  --c4: var(--color-accent-light);
+  --c5: #8bcd3a;
+  --c6: #b8e986;
+  --c7: #a0cf52;
+  --c8: #c8e3a0;
+  --c9: #d3e8b0;
 
   background: repeating-conic-gradient(
           from 30deg,
@@ -621,8 +621,36 @@ body.dark-mode .testimonial-item span {
 
 body.dark-mode .cta {
   background-color: var(--color-accent-dark);
-}
+  color: var(--color-text-dark);
+  --c1: var(--color-background-dark);
+  --c2: #4a4a4a;
+  --c3: #333333;
+  --c4: var(--color-accent-dark);
+  --c5: #8bcd3a;
+  --c6: #6fa22f;
+  --c7: #587922;
+  --c8: #4e6720;
+  --c9: #3e5220;
 
+  background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 45deg,
+        var(--c2) 0 90deg,
+        var(--c3) 0 135deg,
+        var(--c4) 0 180deg,
+        var(--c5) 0 225deg,
+        var(--c6) 0 270deg,
+        var(--c7) 0 315deg,
+        var(--c8) 0 360deg,
+        var(--c9) 0 405deg
+      );
+}
 
 body.dark-mode .cta {
   background-color: var(--color-accent-dark);
