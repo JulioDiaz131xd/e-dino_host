@@ -78,7 +78,8 @@ session_start();
                     } else {
                         // Renderiza el spline en tiempo real para computadoras
                         renderContainer.innerHTML = `
-                    <spline-viewer id="spline-viewer" url="/assets/spline/robot_follow_cursor_for_landing_page.spline"></spline-viewer>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.37/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
                 `;
                         import("/assets/js/spline-viewer.js");
                     }
