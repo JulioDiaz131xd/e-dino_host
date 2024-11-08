@@ -64,16 +64,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
     viewer.style.display = 'block';
     viewer.style.margin = '0 auto'; 
 });
-
 document.addEventListener('DOMContentLoaded', function () {
     const themeCheckbox = document.querySelector('#checkbox');
 
-    // Si la página se recarga, el estado del checkbox reflejará el tema actual
+    // Si el tema oscuro está activado en la recarga, se mantiene el checkbox marcado
     if (document.body.classList.contains('dark-mode')) {
         themeCheckbox.checked = true;
     }
 
     themeCheckbox.addEventListener('change', () => {
-        document.body.classList.toggle('dark-mode', themeCheckbox.checked);
+        // Activa 'dark-mode' solo cuando el checkbox esté marcado
+        if (themeCheckbox.checked) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
     });
 });
