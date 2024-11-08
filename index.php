@@ -64,26 +64,26 @@ session_start();
             <!-- Script para detectar dispositivo y renderizar en consecuencia -->
             <script type="module">
                 document.addEventListener('DOMContentLoaded', () => {
-                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                    const renderContainer = document.getElementById('render-container');
+                            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                            const renderContainer = document.getElementById('render-container');
 
-                    if (isMobile) {
-                        // Muestra el video para dispositivos móviles
-                        renderContainer.innerHTML = `
+                            if (isMobile) {
+                                // Muestra el video para dispositivos móviles
+                                renderContainer.innerHTML = `
                     <video autoplay loop muted>
                         <source src="/assets/videos/robot_follow_cursor.mp4" type="video/mp4">
                         Tu navegador no soporta video.
                     </video>
                 `;
-                    } else {
-                        // Renderiza el spline en tiempo real para computadoras
-                        renderContainer.innerHTML = `
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.37/build/spline-viewer.js"></script>
-<spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
-                `;
-                        import("/assets/js/spline-viewer.js");
-                    }
-                });
+                            } else {
+                                // Renderiza el spline en tiempo real para computadoras
+                                renderContainer.innerHTML = `
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.37/build/spline-viewer.js">
+            </script>
+            <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
+            `;
+
+            });
             </script>
             <!-- Fin de la sección de renderizado -->
 
