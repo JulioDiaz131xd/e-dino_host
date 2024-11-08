@@ -133,7 +133,7 @@ session_start();
                 </button>
             </center>
         </section>
-        <!--<div class="loader">
+        <!-<div class="loader">
             <div>
                 <ul>
                     <li>
