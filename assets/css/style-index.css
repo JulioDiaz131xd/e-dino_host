@@ -1103,7 +1103,7 @@ body.dark-mode .faq-item p {
 .loader {
   width: 100px;
   height: 70px;
-  --duration: 4s;
+  --duration: 2s;
 }
 
 
