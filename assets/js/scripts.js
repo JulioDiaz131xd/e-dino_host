@@ -66,14 +66,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 document.addEventListener('DOMContentLoaded', function () {
     const themeCheckbox = document.querySelector('#checkbox');
-
-    // Si el tema oscuro está activado en la recarga, se mantiene el checkbox marcado
     if (document.body.classList.contains('dark-mode')) {
         themeCheckbox.checked = true;
     }
 
     themeCheckbox.addEventListener('change', () => {
-        // Activa 'dark-mode' solo cuando el checkbox esté marcado
         if (themeCheckbox.checked) {
             document.body.classList.add('dark-mode');
         } else {
