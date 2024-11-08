@@ -1076,7 +1076,7 @@ body.dark-mode .faq-item p {
 }
 
 .loader {
-  --background: linear-gradient(135deg, #23C4F8, #275EFE);
+  --background: linear-gradient(135deg, #23C4F8, #8BCD3A);
   --shadow: rgba(39, 94, 254, 0.28);
   --text: #6C7486;
   --page: rgba(255, 255, 255, 0.36);
@@ -1103,7 +1103,7 @@ body.dark-mode .faq-item p {
 .loader {
   width: 100px;
   height: 70px;
-  --duration: 2s;
+  --duration: 4%;
 }
 
 
