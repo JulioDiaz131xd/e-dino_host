@@ -59,59 +59,38 @@ session_start();
     <main>
         <!-- Sección Hero -->
         <section class="hero fade-in-scroll">
-            <!-- Render según dispositivo -->
-            <div id="render-container"></div>
-            <!-- Script para detectar dispositivo y renderizar en consecuencia -->
-            <script type="module">
-                document.addEventListener('DOMContentLoaded', () => {
-                            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                            const renderContainer = document.getElementById('render-container');
-
-                            if (isMobile) {
-                                // Muestra el video para dispositivos móviles
-                                renderContainer.innerHTML = `
-                    <video autoplay loop muted>
-                        <source src="/assets/videos/robot_follow_cursor.mp4" type="video/mp4">
-                        Tu navegador no soporta video.
-                    </video>
-                `;
-                            } else {
-                                // Renderiza el spline en tiempo real para computadoras
-                                renderContainer.innerHTML = `
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.37/build/spline-viewer.js">
-            </script>
-            <spline-viewer url="https://prod.spline.design/mjfs-tIONiQcExqV/scene.splinecode"></spline-viewer>
-            `;
-
-            });
-            </script>
-            <!-- Fin de la sección de renderizado -->
-
+            <!-- Render -->
+            <script type="module" src="/assets/js/spline-viewer.js"></script>
+            <spline-viewer id="spline-viewer" url="/assets/spline/robot_follow_cursor_for_landing_page.spline"></spline-viewer>
+            <!-- End Render -->
             <?php if (isset($_SESSION['user_id'])): ?>
                 <button id="button-betas" onclick="window.location.href='./public/dashboard.php'">
                     <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                     </svg>
                     <p>Ir a mis cases!</p>
                     <span class="circle"></span>
                     <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                     </svg>
                 </button>
             <?php else: ?>
                 <button id="button-betas" onclick="window.location.href='./public/register.php'">
                     <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                     </svg>
                     <p>Registrate</p>
                     <span class="circle"></span>
                     <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        <path
+                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                     </svg>
                 </button>
             <?php endif; ?>
         </section>
-
         <!-- Sección Beneficios -->
         <section class="benefits slide-left-scroll">
             <h2>Beneficios de E-Dino</h2>
