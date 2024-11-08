@@ -94,17 +94,11 @@ session_start();
         <!-- Sección Beneficios -->
         <section class="benefits slide-left-scroll">
             <h2>Beneficios de E-Dino</h2>
-            <!-- Adaptado del código original -->
-            <div id="benefit1" class="benefit-item">
-                <img src="./assets/images/benefit1.svg" alt="Beneficio 1" height="40" width="40">
-                <div class="benefit-content">
-                    <h3 class="benefit-title">Estudio Flexible</h3>
-                    <p class="benefit-description">
-                        Accede a los cursos y programas en cualquier momento, desde cualquier lugar.
-                    </p>
-                </div>
+            <div class="benefit-item">
+                <img src="./assets/images/benefit1.svg" alt="Beneficio 1">
+                <h3>Estudio Flexible</h3>
+                <p>Accede a los cursos y programas en cualquier momento, desde cualquier lugar.</p>
             </div>
-
             <div class="benefit-item">
                 <img src="https://blog.comparasoftware.com/wp-content/uploads/2020/07/Soporte-Tecnico-presencial-1.png" alt="Beneficio 2">
                 <h3>Soporte 24/7</h3>
@@ -132,12 +126,12 @@ session_start();
         <section class="cta slide-right-scroll">
             <h2>Únete hoy</h2>
             <p>No pierdas la oportunidad de ser parte de la revolución educativa. ¡Inscríbete ahora!</p>
-            <center><button class="ui-btn" onclick="window.location.href='./public/register.php'">
-                    <span>
-                        Empezar
-                    </span>
-                </button>
-            </center>
+           <center><button class="ui-btn" onclick="window.location.href='./public/register.php'">
+                <span>
+                    Empezar
+                </span>
+            </button>
+            </center> 
         </section>
     </main>
     <?php include './includes/footer.php'; ?>
