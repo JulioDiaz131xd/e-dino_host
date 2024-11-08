@@ -78,3 +78,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const viewer = document.getElementById('spline-viewer');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const script = document.createElement('script');
+                script.type = 'module';
+                script.src = "/assets/js/spline-viewer.js";
+                document.head.appendChild(script);
+                observer.unobserve(viewer);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(viewer);
+});
