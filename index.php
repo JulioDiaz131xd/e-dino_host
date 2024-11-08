@@ -126,11 +126,12 @@ session_start();
         <section class="cta slide-right-scroll">
             <h2>Únete hoy</h2>
             <p>No pierdas la oportunidad de ser parte de la revolución educativa. ¡Inscríbete ahora!</p>
-            <button class="ui-btn" onclick="window.location.href='./public/register.php'">
+           <center><button class="ui-btn" onclick="window.location.href='./public/register.php'">
                 <span>
                     Empezar
                 </span>
             </button>
+            </center> 
         </section>
     </main>
     <?php include './includes/footer.php'; ?>
