@@ -26,13 +26,11 @@ session_start();
                 <button id="theme-toggle" class="header-btn">
                     <img id="theme-icon" src="/assets/images/dark-icon.png" alt="/assets/images/dark-icon.png" />
                 </button>
-
                 <p class="component-title"></p>
-
                 <div class="container">
                     <input type="checkbox" class="checkbox" id="checkbox">
                     <label class="switch" for="checkbox">
-                    <span class="slider"></span>
+                        <span class="slider"></span>
                     </label>
                 </div>
                 <?php

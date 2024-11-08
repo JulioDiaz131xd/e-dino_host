@@ -64,3 +64,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     viewer.style.display = 'block';
     viewer.style.margin = '0 auto'; 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const themeCheckbox = document.querySelector('#checkbox');
+
+    // Si la página se recarga, el estado del checkbox reflejará el tema actual
+    if (document.body.classList.contains('dark-mode')) {
+        themeCheckbox.checked = true;
+    }
+
+    themeCheckbox.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode', themeCheckbox.checked);
+    });
+});
