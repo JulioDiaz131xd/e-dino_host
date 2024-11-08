@@ -133,7 +133,7 @@ session_start();
                 </button>
             </center>
         </section>
-        <div class="loader">
+        <!--<div class="loader">
             <div>
                 <ul>
                     <li>
@@ -169,6 +169,7 @@ session_start();
                 </ul>
             </div><span>Loading</span>
         </div>
+        -->
     </main>
     <?php include './includes/footer.php'; ?>
     <script src="./assets/js/scripts.js">
