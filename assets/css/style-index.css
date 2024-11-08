@@ -1086,6 +1086,18 @@ body.dark-mode .faq-item p {
   height: 140px;
   position: relative;
 }
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader {
+  width: 100px; 
+  height: 70px; 
+  --duration: 2s; 
+}
 
 .loader:before, .loader:after {
   --r: -6deg;
