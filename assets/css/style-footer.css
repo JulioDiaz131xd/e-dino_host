@@ -1,0 +1,20 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-container p {
+    font-family: Impact, sans-serif;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustes específicos para el icono */
+.loader {
+    margin-left: 10px; /* Espacio entre el texto y el icono */
+}
