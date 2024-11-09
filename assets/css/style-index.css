@@ -1077,7 +1077,7 @@ body.dark-mode .faq-item p {
 
 .loader {
   --background: linear-gradient(135deg, #23C4F8, #8BCD3A);
-  --shadow: rgba(39, 94, 254, 0.28);
+  --shadow: #8BCD3A;
   --text: #6C7486;
   --page: rgba(255, 255, 255, 0.8); /* Color para las páginas */
   --page-fold: rgba(255, 255, 255, 0.6);
