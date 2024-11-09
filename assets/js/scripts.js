@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener("load", function() {
     setTimeout(function() {
       document.querySelector(".loader-wrapper").style.display = "none";
-    }, 3000); 
+    }, 5000); 
   });
   
   window.addEventListener("load", function() {
