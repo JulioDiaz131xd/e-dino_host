@@ -3,12 +3,11 @@
     width: 100%;
     background-color: #f1f1f1;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 1000;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 .footer-container {
@@ -17,7 +16,6 @@
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* Estilos para el logo o título del footer */
@@ -35,13 +33,14 @@
 /* Estilos para los enlaces del footer */
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 15px;
 }
 
 .footer-link {
     color: #007BFF;
     text-decoration: none;
-    margin-left: 15px;
     font-size: 1rem;
 }
 
@@ -55,10 +54,10 @@
     color: #fff;
     border: none;
     padding: 8px 12px;
-    margin-left: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 .footer-btn:hover {
@@ -71,21 +70,54 @@
     color: #333;
 }
 
-/* Ajustes para pantallas más pequeñas */
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+    .footer-container {
+        max-width: 90%;
+        padding: 0 15px;
+    }
+}
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         align-items: flex-start;
-    }
-    
-    .footer-btn {
-        margin-top: 10px;
-        width: 100%;
         text-align: center;
     }
-    
-    .footer-link {
-        margin-left: 0;
+
+    .footer-logo {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
         margin-top: 10px;
+    }
+
+    .footer-btn {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo {
+        font-size: 1rem;
+    }
+
+    .footer-link {
+        font-size: 0.9rem;
+    }
+
+    .footer-btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .footer-info {
+        font-size: 0.8rem;
     }
 }
