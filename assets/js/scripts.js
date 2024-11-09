@@ -96,9 +96,12 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(viewer);
 });
 
-window.addEventListener('load', function() {
-    document.querySelector('.loader').style.display = 'none';
+window.addEventListener("load", function() {
+    setTimeout(function() {
+      document.querySelector(".loader-wrapper").style.display = "none";
+    }, 3000); 
   });
+  
   window.addEventListener("load", function() {
     document.querySelector(".loader-wrapper").style.display = "none";
   });
