@@ -27,6 +27,6 @@
         </div>
         <!-- Copyright -->
         <div class="footer-bottom">
-            <p>&copy; <?php echo date("Y"); ?> E-Dino. Todos los derechos reservados.</p>
+            <center><p>&copy; <?php echo date("Y"); ?> E-Dino. Todos los derechos reservados.</p></center>
         </div>
     </footer>
