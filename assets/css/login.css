@@ -1,4 +1,98 @@
 /* General Styles for Login */
+/* Header */
+header {
+    background-color: var(--color-background-light);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Modo oscuro para el header */
+body.dark-mode header {
+    background-color: var(--color-background-dark);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Container del header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-accent-light);
+    transition: color 0.3s ease;
+}
+
+/* Logo en modo oscuro */
+body.dark-mode .logo {
+    color: var(--color-accent-dark);
+}
+
+/* Contenedor de botones en el header */
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Botones en el header */
+.header-buttons button {
+    background-color: var(--color-button-light);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin: 0;
+    z-index: 1010; /* Asegura visibilidad sobre otros elementos */
+}
+
+/* Botones en modo oscuro */
+body.dark-mode .header-buttons button {
+    background-color: var(--color-button-dark);
+}
+
+/* Hover de los botones */
+.header-buttons button:hover {
+    background-color: #69a32b;
+}
+
+/* Hover de los botones en modo oscuro */
+body.dark-mode .header-buttons button:hover {
+    background-color: rgb(102, 150, 43);
+}
+
+/* Botón de cambio de tema */
+#theme-toggle {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Icono de cambio de tema */
+#theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+/* Transformación del icono en modo oscuro */
+body.dark-mode #theme-icon {
+    transform: rotate(180deg);
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
