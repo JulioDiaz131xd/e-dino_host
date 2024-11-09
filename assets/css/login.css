@@ -1,3 +1,14 @@
+:root {
+    --color-background-light: #f9f9f9;
+    --color-text-light: #333;
+    --color-background-dark: #000000;
+    --color-text-dark: #ffffff;
+    --color-accent-light: #8BCD3A;
+    --color-accent-dark: rgb(139, 205, 58); 
+    --color-button-light: #8BCD3A;
+    --color-button-dark: rgb(139, 205, 58);
+}
+
 /* General Styles for Login */
 /* Header */
 header {
@@ -55,7 +66,7 @@ body.dark-mode .logo {
     font-size: 1em;
     transition: background-color 0.3s ease;
     margin: 0;
-    z-index: 1010; /* Asegura visibilidad sobre otros elementos */
+    z-index: 1010;
 }
 
 /* Botones en modo oscuro */
@@ -96,9 +107,14 @@ body.dark-mode #theme-icon {
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
     overflow-x: hidden;
+}
+
+body.dark-mode {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
 }
 
 a {
@@ -123,7 +139,7 @@ button {
     align-items: center;
     padding: 20px;
     min-height: 100vh;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: linear-gradient(45deg, #8BCD3A, #2575fc);
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -140,7 +156,7 @@ button {
 
 h2 {
     font-size: 2.5rem;
-    color: #007bff;
+    color: var(--color-accent-light);
     margin-bottom: 20px;
     animation: slideInFromLeft 1.5s ease;
 }
@@ -151,12 +167,12 @@ h2 {
 }
 
 .login-container a {
-    color: #007bff;
+    color: var(--color-accent-light);
     transition: color 0.3s ease;
 }
 
 .login-container a:hover {
-    color: #0056b3;
+    color: #69a32b;
 }
 
 form {
@@ -170,7 +186,11 @@ form {
     margin-bottom: 8px;
     display: block;
     text-align: left;
-    color: #333;
+    color: var(--color-text-light);
+}
+
+body.dark-mode .input-group label {
+    color: var(--color-text-dark);
 }
 
 input[type="email"],
@@ -180,16 +200,28 @@ input[type="password"] {
     font-size: 1rem;
     border: 2px solid #ddd;
     border-radius: 8px;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
     outline: none;
     transition: all 0.3s ease;
 }
 
+body.dark-mode input[type="email"],
+body.dark-mode input[type="password"] {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
+    border: 2px solid #555;
+}
+
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #007bff;
+    border-color: var(--color-accent-light);
     transform: scale(1.02);
+}
+
+body.dark-mode input[type="email"]:focus,
+body.dark-mode input[type="password"]:focus {
+    border-color: var(--color-accent-dark);
 }
 
 .error-message {
@@ -199,7 +231,7 @@ input[type="password"]:focus {
 }
 
 .login-btn {
-    background-color: #007bff;
+    background-color: var(--color-accent-light);
     color: #fff;
     padding: 15px;
     font-size: 1.2rem;
@@ -208,8 +240,12 @@ input[type="password"]:focus {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+body.dark-mode .login-btn {
+    background-color: var(--color-accent-dark);
+}
+
 .login-btn:hover {
-    background-color: #0056b3;
+    background-color: #69a32b;
     transform: scale(1.05);
 }
 
