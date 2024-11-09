@@ -1,59 +1,91 @@
+/* Estilos generales para el footer */
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    width: 100%;
+    background-color: #f1f1f1;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    padding: 0 20px;
 }
 
-.footer-links, .footer-social, .footer-contact {
-    flex: 1;
-    padding: 10px;
-}
-
-.footer-links h3, .footer-social h3, .footer-contact h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #ffd700;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin: 5px 0;
-}
-
-.footer-links a {
-    color: #fff;
+/* Estilos para el logo o título del footer */
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #007BFF;
     text-decoration: none;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
+.footer-logo:hover {
+    color: #0056b3;
 }
 
-.footer-social a {
-    margin: 0 10px;
-    display: inline-block;
+/* Estilos para los enlaces del footer */
+.footer-links {
+    display: flex;
+    align-items: center;
 }
 
-.footer-social img {
-    width: 24px;
-    height: 24px;
+.footer-link {
+    color: #007BFF;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1rem;
 }
 
-.footer-bottom {
-    margin-top: 20px;
-    font-size: 14px;
+.footer-link:hover {
+    color: #0056b3;
+}
+
+/* Estilos para botones en el footer, si se requiere */
+.footer-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.footer-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el texto informativo en el footer */
+.footer-info {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .footer-btn {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-link {
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }
