@@ -80,12 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="orbe" style="--index: 4"></div>
         </div>
     </div>
-    <script>
-    window.addEventListener("load", function() {
-        const loader = document.querySelector(".loader");
-        loader.style.display = "none"; 
-    });
-  
+    <script>  
     window.addEventListener("load", function() {
         const loaderOverlay = document.querySelector(".loader-overlay");
         loaderOverlay.style.display = "none"; // Oculta la pantalla de carga al finalizar
