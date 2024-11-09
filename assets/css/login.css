@@ -355,7 +355,7 @@ body.dark-mode .login-btn:hover {
   .loader {
     width: 100px;
     height: 70px;
-    --duration: 4%;
+    --duration: 4s;
   }
   
   
