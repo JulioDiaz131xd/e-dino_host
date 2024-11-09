@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="icon" href="../assets/images/logo.ico">
 </head>
+
 <body>
 
     <?php
@@ -69,6 +71,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Incluir el footer
     include '../includes/footer.php';
     ?>
+    <div class="loader-overlay">
+        <div class="loader">
+            <div class="orbe" style="--index: 0"></div>
+            <div class="orbe" style="--index: 1"></div>
+            <div class="orbe" style="--index: 2"></div>
+            <div class="orbe" style="--index: 3"></div>
+            <div class="orbe" style="--index: 4"></div>
+        </div>
+    </div>
+    <script>
+    window.addEventListener("load", function() {
+        const loader = document.querySelector(".loader");
+        loader.style.display = "none"; 
+    });
+</script>
 
 </body>
 </html>
