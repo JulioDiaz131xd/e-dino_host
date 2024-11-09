@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Login - E-Dino</title>
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="icon" href="../assets/images/logo.ico">
 </head>
 <body>
