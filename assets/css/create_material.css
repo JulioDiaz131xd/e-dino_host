@@ -230,54 +230,50 @@ button.delete-criterio {
   }
   
 /* Estilos para el botón con id "save" */
-#save {
-    font-family: inherit;
-    font-size: 20px;
-    background: #212121;
+button {
+    background-color: var(--button-bg);
     color: white;
-    fill: rgb(155, 153, 153);
-    padding: 0.7em 1em;
-    padding-left: 0.9em;
+    padding: 0.5rem 1rem; /* Ajusta el padding para hacer los botones más pequeños */
+    border: none;
+    border-radius: 5px;
+    font-size: 0.875rem; /* Reduce el tamaño de la fuente */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 1rem; /* Agrega un margen inferior para separar los botones */
+}
+
+#add-criterio, #save {
+    font-size: 0.875rem; /* Reduce el tamaño de la fuente */
+    padding: 0.5rem 1rem; /* Ajusta el padding */
+}
+
+#save {
+    font-size: 16px; /* Ajusta la fuente */
+    padding: 0.5em 1em;
+    padding-left: 0.7em; /* Ajusta el padding interno para hacerlo más pequeño */
     display: flex;
     align-items: center;
-    cursor: pointer;
-    border: none;
-    border-radius: 15px;
-    font-weight: 1000;
-  }
-  
-  #save span {
-    display: block;
-    margin-left: 0.3em;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  #save svg {
-    display: block;
-    transform-origin: center center;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  #save:hover {
+}
+
+#save svg {
+    width: 20px; /* Ajusta el tamaño del icono */
+    height: 20px; /* Ajusta el tamaño del icono */
+}
+
+#add-criterio {
+    font-size: 0.875rem; /* Reduce el tamaño de la fuente */
+    padding: 0.5rem 1rem;
+}
+
+#save:hover {
     background: #000;
-  }
-  
-  #save:hover .svg-wrapper {
-    transform: scale(1.25);
-    transition: 0.5s linear;
-  }
-  
-  #save:hover svg {
-    transform: translateX(1.2em) scale(1.1);
-    fill: #fff;
-  }
-  
-  #save:hover span {
-    opacity: 0;
-    transition: 0.5s linear;
-  }
-  
-  #save:active {
+}
+
+#save:active {
     transform: scale(0.95);
-  }
-  
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
