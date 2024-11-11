@@ -42,7 +42,7 @@ header h1 {
 
 main {
     flex: 1;
-    max-width: 600px;
+    max-width: 800px;
     margin: 2rem auto;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.1);
@@ -118,4 +118,55 @@ footer {
 
 footer p {
     font-size: 1rem;
+}
+
+/* Tabla de Criterios */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: var(--secondary-color);
+    color: var(--header-text);
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+    background-color: rgba(163, 252, 175, 0.1);
+}
+
+.delete-criterio {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-criterio:hover {
+    background-color: #c9302c;
 }
