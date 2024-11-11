@@ -116,32 +116,42 @@ $user->closeConnection();
     </footer>
 
     <script>
-        let criterioCount = 1;
+let criterioCount = 1;
 
-        document.getElementById('add-criterio').addEventListener('click', function() {
-            if (criterioCount < 5) {
-                const tableBody = document.getElementById('criterios-table');
-                const newRow = `
-                    <tr class="criterio" id="criterio-${criterioCount}">
-                        <td><input type="text" name="criterios[${criterioCount}][nombre]" required></td>
-                        <td><textarea name="criterios[${criterioCount}][descripcion]" required></textarea></td>
-                        <td><input type="number" name="criterios[${criterioCount}][nivel]" min="1" max="100" required></td>
-                        <td><input type="text" name="criterios[${criterioCount}][nivel_nombre]" placeholder="Descripción del nivel" required></td>
-                        <td><button type="button" class="delete-criterio" onclick="deleteCriterio(${criterioCount})">Eliminar</button></td>
-                    </tr>
-                `;
-                tableBody.insertAdjacentHTML('beforeend', newRow);
-                criterioCount++;
-            } else {
-                alert("Solo se pueden añadir hasta 5 criterios.");
-            }
-        });
+document.getElementById('add-criterio').addEventListener('click', function() {
+    if (criterioCount < 5) {
+        const tableBody = document.getElementById('criterios-table');
+        const newRow = `
+            <tr class="criterio" id="criterio-${criterioCount}">
+                <td><input type="text" name="criterios[${criterioCount}][nombre]" required></td>
+                <td><textarea name="criterios[${criterioCount}][descripcion]" required></textarea></td>
+                <td><input type="number" name="criterios[${criterioCount}][nivel]" min="1" max="100" required></td>
+                <td><input type="text" name="criterios[${criterioCount}][nivel_nombre]" placeholder="Descripción del nivel" required></td>
+                <td>
+                    <button type="button" class="delete-criterio noselect" onclick="deleteCriterio(${criterioCount})">
+                        <span class="text">Eliminar</span>
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </td>
+            </tr>
+        `;
+        tableBody.insertAdjacentHTML('beforeend', newRow);
+        criterioCount++;
+    } else {
+        alert("Solo se pueden añadir hasta 5 criterios.");
+    }
+});
 
-        function deleteCriterio(index) {
-            const criterioRow = document.getElementById(`criterio-${index}`);
-            criterioRow.remove();
-            criterioCount--;
-        }
+function deleteCriterio(index) {
+    const criterioRow = document.getElementById(`criterio-${index}`);
+    criterioRow.remove();
+    criterioCount--;
+}
+
     </script>
 </body>
 
