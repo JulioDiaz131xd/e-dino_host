@@ -237,16 +237,16 @@ button.delete-criterio {
     background: #212121;
     color: white;
     fill: rgb(155, 153, 153);
-    width: 40px; /* Ancho fijo del botón */
-    height: 40px; /* Altura fija del botón */
+    width: 60px; /* Aumento el tamaño del botón */
+    height: 60px; /* Aumento la altura para mantenerlo cuadrado */
     display: flex;
     align-items: center;
     justify-content: center; /* Centra el contenido dentro del botón */
     cursor: pointer;
     border: none;
-    border-radius: 8px; /* Bordes ligeramente redondeados */
+    border-radius: 10px; /* Bordes ligeramente redondeados */
     font-weight: 700;
-    padding: 0; /* Elimina el padding para evitar que el botón crezca más allá del tamaño especificado */
+    padding: 0; /* Elimina el padding */
 }
 
 #save span {
@@ -255,8 +255,8 @@ button.delete-criterio {
 
 #save svg {
     display: block;
-    width: 20px; /* Ajusta el tamaño del ícono */
-    height: 20px;
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: 30px;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
 }
