@@ -158,6 +158,47 @@ tbody tr:hover {
     background-color: rgba(163, 252, 175, 0.1);
 }
 
+/* Estilo para los campos de número */
+input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto de foco */
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+}
+
+/* Para el caso en que sea un campo de número con valores limitados */
+input[type="number"]:invalid {
+    border-color: #ff4d4d;
+}
+
+input[type="number"]:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+/* Estilo específico para el input dentro de la tabla */
+td input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
 /* Estilos base para el botón delete-criterio */
 button.delete-criterio {
     width: 150px;
