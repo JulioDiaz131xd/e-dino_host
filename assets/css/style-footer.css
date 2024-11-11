@@ -1,3 +1,78 @@
-.footer {
-    font-family: Impact, sans-serif;
-}
+  /* Estilos Generales del Footer */
+  .footer {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    color: #4caf50;
+  }
+  
+  .footer-section p, .footer-section ul, .footer-section a {
+    font-size: 0.9em;
+    line-height: 1.6;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  
+  .footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    color: #4caf50;
+  }
+  
+  /* Redes Sociales */
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Línea divisoria */
+  .footer-line {
+    border-top: 1px solid #4caf50;
+    margin: 20px 0;
+  }
+  
+  /* Parte Inferior del Footer */
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.8em;
+  }
+  
+  .footer-bottom a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    color: #4caf50;
+  }
