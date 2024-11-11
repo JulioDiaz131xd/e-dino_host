@@ -2,7 +2,6 @@
 <footer class="footer">
     <div class="footer-container">
       
-      <!-- Sección de Información General -->
       <div class="footer-section">
         <h3>Sobre E-Dino</h3>
         <p>
@@ -10,7 +9,6 @@
         </p>
       </div>
 
-      <!-- Sección de Navegación -->
       <div class="footer-section">
         <h3>Explora</h3>
         <ul>
@@ -22,7 +20,6 @@
         </ul>
       </div>
 
-      <!-- Sección de Contacto -->
       <div class="footer-section">
         <h3>Contáctanos</h3>
         <p>
@@ -32,7 +29,6 @@
         </p>
       </div>
 
-      <!-- Sección de Redes Sociales -->
       <div class="footer-section">
         <h3>Síguenos</h3>
         <div class="social-icons">

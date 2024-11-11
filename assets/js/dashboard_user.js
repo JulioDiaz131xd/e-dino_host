@@ -65,3 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error:', error));
     });
 });
+
+window.addEventListener("load", function() {
+    setTimeout(function() {
+      document.querySelector(".loader-wrapper").style.display = "none";
+    }, 5000); 
+  });
+  
+  window.addEventListener("load", function() {
+    document.querySelector(".loader-wrapper").style.display = "none";
+  });
