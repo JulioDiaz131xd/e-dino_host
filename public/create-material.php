@@ -17,26 +17,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rubrica_name = $_POST['rubrica_name'];
     $criterios = $_POST['criterios'];
 
-    // Crear la rúbrica
-    $result = $user->createRubric($rubrica_name, $criterios, $clase_id);
-    
-    if ($result) {
-        $rubric_id = $user->getLastInsertId();
-        
-        // Guardar cada criterio asociado a la rúbrica
-        foreach ($criterios as $criterio) {
-            $criterion_name = $criterio['nombre'];
-            $description = $criterio['descripcion'];
-            $nivel = intval($criterio['nivel']);
-
-            // Añadir el criterio a la rúbrica
-            $user->addCriterion($rubric_id, $criterion_name, $description, $nivel);
-        }
-
-        header("Location: gestionar_clase.php?clase_id=$clase_id");
-        exit();
+    // Validación para máximo 5 criterios
+    if (count($criterios) > 5) {
+        $error = "No puedes añadir más de 5 criterios.";
     } else {
-        $error = "Error al crear la rúbrica.";
+        // Crear la rúbrica
+        $result = $user->createRubric($rubrica_name, $criterios, $clase_id);
+        
+        if ($result) {
+            $rubric_id = $user->getLastInsertId();
+
+            // Guardar cada criterio asociado a la rúbrica
+            foreach ($criterios as $criterio) {
+                $criterion_name = $criterio['nombre'];
+                $description = $criterio['descripcion'];
+                $nivel = intval($criterio['nivel']);
+                $nivel_nombre = $criterio['nivel_nombre'];
+
+                // Añadir el criterio a la rúbrica
+                $user->addCriterion($rubric_id, $criterion_name, $description, $nivel, $nivel_nombre);
+            }
+
+            header("Location: gestionar_clase.php?clase_id=$clase_id");
+            exit();
+        } else {
+            $error = "Error al crear la rúbrica.";
+        }
     }
 }
 
@@ -72,7 +78,8 @@ $user->closeConnection();
                         <tr>
                             <th>Criterio</th>
                             <th>Descripción</th>
-                            <th>Nivel de Evaluación</th>
+                            <th>Nivel (%)</th>
+                            <th>Nombre del Nivel</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -80,18 +87,8 @@ $user->closeConnection();
                         <tr class="criterio" id="criterio-0">
                             <td><input type="text" name="criterios[0][nombre]" required></td>
                             <td><textarea name="criterios[0][descripcion]" required></textarea></td>
-                            <td>
-                                <select name="criterios[0][nivel]" required>
-                                    <option value="100">Excelente (100%)</option>
-                                    <option value="90">Muy Bueno (90%)</option>
-                                    <option value="80">Bueno (80%)</option>
-                                    <option value="70">Aceptable (70%)</option>
-                                    <option value="60">Regular (60%)</option>
-                                    <option value="50">Debe Mejorar (50%)</option>
-                                    <option value="40">Insuficiente (40%)</option>
-                                    <option value="30">Muy Deficiente (30%)</option>
-                                </select>
-                            </td>
+                            <td><input type="number" name="criterios[0][nivel]" min="1" max="100" required></td>
+                            <td><input type="text" name="criterios[0][nivel_nombre]" placeholder="Descripción del nivel" required></td>
                             <td><button type="button" class="delete-criterio" onclick="deleteCriterio(0)">Eliminar</button></td>
                         </tr>
                     </tbody>
@@ -115,33 +112,28 @@ $user->closeConnection();
         let criterioCount = 1;
 
         document.getElementById('add-criterio').addEventListener('click', function() {
-            const tableBody = document.getElementById('criterios-table');
-            const newRow = `
-                <tr class="criterio" id="criterio-${criterioCount}">
-                    <td><input type="text" name="criterios[${criterioCount}][nombre]" required></td>
-                    <td><textarea name="criterios[${criterioCount}][descripcion]" required></textarea></td>
-                    <td>
-                        <select name="criterios[${criterioCount}][nivel]" required>
-                            <option value="100">Excelente (100%)</option>
-                            <option value="90">Muy Bueno (90%)</option>
-                            <option value="80">Bueno (80%)</option>
-                            <option value="70">Aceptable (70%)</option>
-                            <option value="60">Regular (60%)</option>
-                            <option value="50">Debe Mejorar (50%)</option>
-                            <option value="40">Insuficiente (40%)</option>
-                            <option value="30">Muy Deficiente (30%)</option>
-                        </select>
-                    </td>
-                    <td><button type="button" class="delete-criterio" onclick="deleteCriterio(${criterioCount})">Eliminar</button></td>
-                </tr>
-            `;
-            tableBody.insertAdjacentHTML('beforeend', newRow);
-            criterioCount++;
+            if (criterioCount < 5) {
+                const tableBody = document.getElementById('criterios-table');
+                const newRow = `
+                    <tr class="criterio" id="criterio-${criterioCount}">
+                        <td><input type="text" name="criterios[${criterioCount}][nombre]" required></td>
+                        <td><textarea name="criterios[${criterioCount}][descripcion]" required></textarea></td>
+                        <td><input type="number" name="criterios[${criterioCount}][nivel]" min="1" max="100" required></td>
+                        <td><input type="text" name="criterios[${criterioCount}][nivel_nombre]" placeholder="Descripción del nivel" required></td>
+                        <td><button type="button" class="delete-criterio" onclick="deleteCriterio(${criterioCount})">Eliminar</button></td>
+                    </tr>
+                `;
+                tableBody.insertAdjacentHTML('beforeend', newRow);
+                criterioCount++;
+            } else {
+                alert("Solo se pueden añadir hasta 5 criterios.");
+            }
         });
 
         function deleteCriterio(index) {
             const criterioRow = document.getElementById(`criterio-${index}`);
             criterioRow.remove();
+            criterioCount--;
         }
     </script>
 </body>
