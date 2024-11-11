@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Crear Clase - E-Dino</title>
-    <link rel="stylesheet" href="../assets/css/crear_clase.css">
+    <link rel="stylesheet" href="/../assets/css/crear_clase.css">
     <link rel="icon" href="../assets/images/logo.ico">
 </head>
 <style>:root {

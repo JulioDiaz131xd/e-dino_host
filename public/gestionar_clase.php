@@ -5,11 +5,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-require_once '../core/models/User.php'; 
+require_once '../core/models/User.php';
 require_once '../core/models/manage_classes.php';
 
 $usuario_id = $_SESSION['user_id'];
-$rol_id = $_SESSION['rol_id'];  
+$rol_id = $_SESSION['rol_id'];
 $clase_id = isset($_GET['clase_id']) ? intval($_GET['clase_id']) : 0;
 
 $user = new User();
@@ -41,7 +41,6 @@ if (isset($_GET['error'])) {
 
 $user->closeConnection();
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -64,20 +63,31 @@ $user->closeConnection();
             </ul>
         </nav>
     </header>
-
     <main class="main-content">
         <section class="class-info">
             <h2>Descripción</h2>
             <p><?php echo htmlspecialchars($descripcion_clase); ?></p>
         </section>
-
         <section class="class-actions">
             <?php if ($rol_id == 1): ?>
-                <button id="view-rubrics-btn" class="action-btn" 
+                <button id="view-rubrics-btn" class="action-btn"
                     onclick="window.location.href='ver_rubricas.php?clase_id=<?php echo $clase_id; ?>'">Ver Mis Rúbricas</button>
                 <button id="create-class-material-btn" class="action-btn"
                     onclick="window.location.href='create-material.php?clase_id=<?php echo $clase_id; ?>'">Crear Material de Clase</button>
             <?php endif; ?>
+        </section>
+        <section class="class-actions">
+            <?php if ($rol_id == 1): ?>
+                <button id="view-rubrics-btn" class="action-btn"
+                    onclick="window.location.href='ver_rubricas.php?clase_id=<?php echo $clase_id; ?>'">Ver Mis Rúbricas</button>
+                <button id="create-class-material-btn" class="action-btn"
+                    onclick="window.location.href='create-material.php?clase_id=<?php echo $clase_id; ?>'">Crear Material de Clase</button>
+            <?php endif; ?>
+
+            <button id="leave-class-btn" class="action-btn"
+                onclick="if(confirm('¿Estás seguro de que deseas salir de la clase?')) { window.location.href='salir_de_clase.php?clase_id=<?php echo $clase_id; ?>'; }">
+                Salir de la Clase
+            </button>
         </section>
 
         <section class="class-members">
@@ -103,30 +113,28 @@ $user->closeConnection();
                 <p>No hay miembros en esta clase.</p>
             <?php endif; ?>
         </section>
-
         <section class="class-materials">
             <h2>Materiales de Clase</h2>
             <?php if (count($materiales_clase) > 0): ?>
                 <?php foreach ($materiales_clase as $material): ?>
                     <div class="material-item">
-                        <button class="material-btn" 
+                        <button class="material-btn"
                             onclick="window.location.href='ver_material.php?material_id=<?php echo $material['id']; ?>'">
                             <?php echo htmlspecialchars($material['titulo']); ?>
                         </button>
-                        <a href="eliminar_material.php?material_id=<?php echo $material['id']; ?>" 
-                           onclick="return confirm('¿Estás seguro de que deseas eliminar este material?');">Eliminar</a>
+                        <a href="eliminar_material.php?material_id=<?php echo $material['id']; ?>"
+                            onclick="return confirm('¿Estás seguro de que deseas eliminar este material?');">Eliminar</a>
                     </div>
                 <?php endforeach; ?>
             <?php else: ?>
                 <p>No hay materiales en esta clase.</p>
             <?php endif; ?>
         </section>
-    </main>
 
+    </main>
     <footer class="footer">
         <p>&copy; <?php echo date("Y"); ?> E-Dino. Todos los derechos reservados.</p>
     </footer>
-
     <script src="../assets/js/gestionar_clase.js"></script>
 </body>
 

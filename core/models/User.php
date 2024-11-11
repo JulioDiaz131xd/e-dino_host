@@ -169,4 +169,12 @@ class User {
     public function closeConnection() {
         $this->conn->close();
     }
+    // User.php
+public function leaveClass($usuario_id, $clase_id) {
+    $sql = "DELETE FROM clases_usuarios WHERE usuario_id = ? AND clase_id = ?";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bind_param("ii", $usuario_id, $clase_id);
+    return $stmt->execute();
+}
+
 }
