@@ -42,19 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$criterios_activos = array_filter($criterios, function ($criterio) {
-    return isset($criterio['activo']) && $criterio['activo'] == 'on';
-});
-
-foreach ($criterios_activos as $criterio) {
-    $criterion_name = $criterio['nombre'];
-    $description = $criterio['descripcion'];
-    $nivel = intval($criterio['nivel']);
-    $nivel_nombre = $criterio['nivel_nombre'];
-
-    $user->addCriterion($rubric_id, $criterion_name, $description, $nivel, $nivel_nombre);
-}
-
 $user->closeConnection();
 ?>
 
@@ -85,7 +72,6 @@ $user->closeConnection();
                 <table>
                     <thead>
                         <tr>
-                            <th>Activar</th>
                             <th>Criterio</th>
                             <th>Descripción</th>
                             <th>Nivel (%)</th>
@@ -95,18 +81,22 @@ $user->closeConnection();
                     </thead>
                     <tbody id="criterios-table">
                         <tr class="criterio" id="criterio-0">
-                            <td><input type="checkbox" name="criterios[0][activo]" checked></td>
                             <td><input type="text" name="criterios[0][nombre]" required></td>
                             <td><textarea name="criterios[0][descripcion]" required></textarea></td>
                             <td><input type="number" name="criterios[0][nivel]" min="1" max="100" required></td>
                             <td><input type="text" name="criterios[0][nivel_nombre]" placeholder="Descripción del nivel" required></td>
-                            <td><button type="button" class="delete-criterio noselect" onclick="deleteCriterio(0)">Eliminar</button></td>
+                            <td><button type="button" class="delete-criterio noselect" onclick="deleteCriterio(0)">
+                                    <span class="text">Eliminar</span>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                                        </svg>
+                                    </span>
+                                </button></td>
                         </tr>
-                        <!-- Aquí puedes agregar más criterios con casillas de verificación -->
                     </tbody>
                 </table>
             </div>
-
             <button class="noselect" type="button" id="add-criterio">
                 <span class="text">Agregar</span>
                 <span class="icon">
@@ -178,5 +168,4 @@ $user->closeConnection();
         }
     </script>
 </body>
-
 </html>
