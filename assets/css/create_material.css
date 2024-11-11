@@ -229,20 +229,20 @@ button.delete-criterio {
     transform: scale(0.8);
   }
   
-/* Estilos para el botón con id "save" */
-#save {
+/*save button */
+
+  #save {
     font-family: inherit;
-    font-size: 14px; /* Reduce el tamaño de la fuente */
+    font-size: 14px; /* Fuente más pequeña */
     background: #212121;
     color: white;
     fill: rgb(155, 153, 153);
-    padding: 0.5em 0.8em; /* Reduce el padding */
-    padding-left: 0.7em; /* Ajusta el padding izquierdo */
+    padding: 0.5em 1.2em; /* Ajusta el padding para hacer el botón más cuadrado */
     display: flex;
     align-items: center;
     cursor: pointer;
     border: none;
-    border-radius: 10px; /* Reduce el radio de los bordes para hacerlo más compacto */
+    border-radius: 4px; /* Radio de borde más pequeño para hacerlo más cuadrado */
     font-weight: 700; /* Ajusta el peso de la fuente */
 }
 
@@ -254,8 +254,8 @@ button.delete-criterio {
 
 #save svg {
     display: block;
-    width: 18px; /* Reduce el tamaño del ícono */
-    height: 18px; /* Ajusta la altura del ícono */
+    width: 18px; /* Tamaño del ícono más pequeño */
+    height: 18px;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
 }
