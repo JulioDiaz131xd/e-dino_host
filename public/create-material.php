@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Crear la rúbrica
         $result = $user->createRubric($rubrica_name, $criterios, $clase_id);
-        
+
         if ($result) {
             $rubric_id = $user->getLastInsertId();
 
@@ -89,7 +89,14 @@ $user->closeConnection();
                             <td><textarea name="criterios[0][descripcion]" required></textarea></td>
                             <td><input type="number" name="criterios[0][nivel]" min="1" max="100" required></td>
                             <td><input type="text" name="criterios[0][nivel_nombre]" placeholder="Descripción del nivel" required></td>
-                            <td><button type="button" class="delete-criterio" onclick="deleteCriterio(0)">Eliminar</button></td>
+                            <td><button type="button" class="delete-criterio noselect" onclick="deleteCriterio(0)">
+                                    <span class="text">Eliminar</span>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                                        </svg>
+                                    </span>
+                                </button></td>
                         </tr>
                     </tbody>
                 </table>
