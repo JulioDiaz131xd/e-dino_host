@@ -9,22 +9,17 @@ try {
     $rubrica_id = intval($_GET['rubrica_id']);
     $manageClasses = new ManageClasses();
 
-    // Obtener los datos de la rúbrica
     $rubrica = $manageClasses->getRubricById($rubrica_id);
 
     if (!$rubrica) {
         throw new Exception("Rúbrica no encontrada.");
     }
 
-    // Obtener criterios de la rúbrica
     $criterios = $manageClasses->getCriteriaByRubricId($rubrica_id);
 
-    // Verificar si se ha enviado el formulario
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $rubrica_name = $_POST['rubrica_name'];
-        // Aquí puedes agregar más campos de la rúbrica como los criterios y niveles
 
-        // Actualizar rúbrica
         $updateResult = $manageClasses->updateRubric($rubrica_id, $rubrica_name, $criterios);
         
         if ($updateResult) {
@@ -59,7 +54,6 @@ try {
             <label for="rubrica_name">Nombre de la Rúbrica:</label>
             <input type="text" id="rubrica_name" name="rubrica_name" value="<?php echo htmlspecialchars($rubrica['nombre']); ?>" required>
 
-            <!-- Aquí puedes agregar la edición de criterios -->
             <button type="submit">Actualizar Rúbrica</button>
         </form>
 

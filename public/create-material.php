@@ -17,24 +17,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rubrica_name = $_POST['rubrica_name'];
     $criterios = $_POST['criterios'];
 
-    // Validación para máximo 5 criterios
     if (count($criterios) > 5) {
         $error = "No puedes añadir más de 5 criterios.";
     } else {
-        // Crear la rúbrica
         $result = $user->createRubric($rubrica_name, $criterios, $clase_id);
 
         if ($result) {
             $rubric_id = $user->getLastInsertId();
 
-            // Guardar cada criterio asociado a la rúbrica
             foreach ($criterios as $criterio) {
                 $criterion_name = $criterio['nombre'];
                 $description = $criterio['descripcion'];
                 $nivel = intval($criterio['nivel']);
                 $nivel_nombre = $criterio['nivel_nombre'];
 
-                // Añadir el criterio a la rúbrica
                 $user->addCriterion($rubric_id, $criterion_name, $description, $nivel, $nivel_nombre);
             }
 
@@ -172,5 +168,4 @@ $user->closeConnection();
         }
     </script>
 </body>
-
 </html>
