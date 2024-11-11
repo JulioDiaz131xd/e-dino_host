@@ -17,26 +17,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rubrica_name = $_POST['rubrica_name'];
     $criterios = $_POST['criterios'];
 
-    // Crear la rúbrica
-    $result = $user->createRubric($rubrica_name, $criterios, $clase_id);
-    
-    if ($result) {
-        $rubric_id = $user->getLastInsertId();
-        
-        // Guardar cada criterio asociado a la rúbrica
-        foreach ($criterios as $criterio) {
-            $criterion_name = $criterio['nombre'];
-            $description = $criterio['descripcion'];
-            $nivel = intval($criterio['nivel']);
-
-            // Añadir el criterio a la rúbrica
-            $user->addCriterion($rubric_id, $criterion_name, $description, $nivel);
-        }
-
-        header("Location: gestionar_clase.php?clase_id=$clase_id");
-        exit();
+    if (count($criterios) > 5) {
+        $error = "Solo puedes agregar hasta 5 criterios.";
     } else {
-        $error = "Error al crear la rúbrica.";
+        $result = $user->createRubric($rubrica_name, $criterios, $clase_id);
+        
+        if ($result) {
+            $rubric_id = $user->getLastInsertId();
+            
+            foreach ($criterios as $criterio) {
+                $criterion_name = $criterio['nombre'];
+                $description = $criterio['descripcion'];
+                $nivel = intval($criterio['nivel']);
+                
+                $user->addCriterion($rubric_id, $criterion_name, $description, $nivel);
+            }
+
+            header("Location: gestionar_clase.php?clase_id=$clase_id");
+            exit();
+        } else {
+            $error = "Error al crear la rúbrica.";
+        }
     }
 }
 
@@ -45,14 +46,12 @@ $user->closeConnection();
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Rúbrica de Evaluación - E-Dino</title>
     <link rel="stylesheet" href="../assets/css/create_material.css">
 </head>
-
 <body>
     <header>
         <h1>Crear Rúbrica de Evaluación</h1>
@@ -67,42 +66,34 @@ $user->closeConnection();
 
             <div id="criterios-wrapper">
                 <h2>Agregar Criterios</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Criterio</th>
-                            <th>Descripción</th>
-                            <th>Nivel de Evaluación</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="criterios-table">
-                        <tr class="criterio" id="criterio-0">
-                            <td><input type="text" name="criterios[0][nombre]" required></td>
-                            <td><textarea name="criterios[0][descripcion]" required></textarea></td>
-                            <td>
-                                <select name="criterios[0][nivel]" required>
-                                    <option value="100">Excelente (100%)</option>
-                                    <option value="90">Muy Bueno (90%)</option>
-                                    <option value="80">Bueno (80%)</option>
-                                    <option value="70">Aceptable (70%)</option>
-                                    <option value="60">Regular (60%)</option>
-                                    <option value="50">Debe Mejorar (50%)</option>
-                                    <option value="40">Insuficiente (40%)</option>
-                                    <option value="30">Muy Deficiente (30%)</option>
-                                </select>
-                            </td>
-                            <td><button type="button" class="delete-criterio" onclick="deleteCriterio(0)">Eliminar</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="criterio" id="criterio-0">
+                    <label for="criterio[]">Criterio:</label>
+                    <input type="text" name="criterios[0][nombre]" required>
+
+                    <label for="criterio_desc[]">Descripción:</label>
+                    <textarea name="criterios[0][descripcion]" required></textarea>
+
+                    <label for="nivel">Nivel de evaluación:</label>
+                    <select name="criterios[0][nivel]" required>
+                        <option value="100">Excelente (100%)</option>
+                        <option value="90">Muy Bueno (90%)</option>
+                        <option value="80">Bueno (80%)</option>
+                        <option value="70">Aceptable (70%)</option>
+                        <option value="60">Regular (60%)</option>
+                        <option value="50">Debe Mejorar (50%)</option>
+                        <option value="40">Insuficiente (40%)</option>
+                        <option value="30">Muy Deficiente (30%)</option>
+                    </select>
+
+                    <button type="button" class="delete-criterio" onclick="deleteCriterio(0)">Eliminar Criterio</button>
+                </div>
             </div>
 
             <button type="button" id="add-criterio">Agregar Criterio</button>
             <button type="submit">Crear Rúbrica</button>
         </form>
 
-        <?php if ($error): ?>
+        <?php if (!empty($error)): ?>
             <p><?php echo htmlspecialchars($error); ?></p>
         <?php endif; ?>
     </main>
@@ -113,37 +104,49 @@ $user->closeConnection();
 
     <script>
         let criterioCount = 1;
+        const maxCriterios = 5;
 
         document.getElementById('add-criterio').addEventListener('click', function() {
-            const tableBody = document.getElementById('criterios-table');
-            const newRow = `
-                <tr class="criterio" id="criterio-${criterioCount}">
-                    <td><input type="text" name="criterios[${criterioCount}][nombre]" required></td>
-                    <td><textarea name="criterios[${criterioCount}][descripcion]" required></textarea></td>
-                    <td>
-                        <select name="criterios[${criterioCount}][nivel]" required>
-                            <option value="100">Excelente (100%)</option>
-                            <option value="90">Muy Bueno (90%)</option>
-                            <option value="80">Bueno (80%)</option>
-                            <option value="70">Aceptable (70%)</option>
-                            <option value="60">Regular (60%)</option>
-                            <option value="50">Debe Mejorar (50%)</option>
-                            <option value="40">Insuficiente (40%)</option>
-                            <option value="30">Muy Deficiente (30%)</option>
-                        </select>
-                    </td>
-                    <td><button type="button" class="delete-criterio" onclick="deleteCriterio(${criterioCount})">Eliminar</button></td>
-                </tr>
+            if (criterioCount >= maxCriterios) {
+                alert("Solo puedes agregar hasta 5 criterios.");
+                return;
+            }
+
+            const wrapper = document.getElementById('criterios-wrapper');
+            const newCriterio = `
+                <div class="criterio" id="criterio-${criterioCount}">
+                    <label for="criterio[]">Criterio:</label>
+                    <input type="text" name="criterios[${criterioCount}][nombre]" required>
+
+                    <label for="criterio_desc[]">Descripción:</label>
+                    <textarea name="criterios[${criterioCount}][descripcion]" required></textarea>
+
+                    <label for="nivel">Nivel de evaluación:</label>
+                    <select name="criterios[${criterioCount}][nivel]" required>
+                        <option value="100">Excelente (100%)</option>
+                        <option value="90">Muy Bueno (90%)</option>
+                        <option value="80">Bueno (80%)</option>
+                        <option value="70">Aceptable (70%)</option>
+                        <option value="60">Regular (60%)</option>
+                        <option value="50">Debe Mejorar (50%)</option>
+                        <option value="40">Insuficiente (40%)</option>
+                        <option value="30">Muy Deficiente (30%)</option>
+                    </select>
+
+                    <button type="button" class="delete-criterio" onclick="deleteCriterio(${criterioCount})">Eliminar Criterio</button>
+                </div>
             `;
-            tableBody.insertAdjacentHTML('beforeend', newRow);
+            wrapper.insertAdjacentHTML('beforeend', newCriterio);
             criterioCount++;
         });
 
         function deleteCriterio(index) {
-            const criterioRow = document.getElementById(`criterio-${index}`);
-            criterioRow.remove();
+            const criterioDiv = document.getElementById(`criterio-${index}`);
+            if (criterioDiv) {
+                criterioDiv.remove();
+                criterioCount--;
+            }
         }
     </script>
 </body>
-
 </html>
