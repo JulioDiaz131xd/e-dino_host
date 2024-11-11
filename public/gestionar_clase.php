@@ -75,14 +75,6 @@ $user->closeConnection();
                 <button id="create-class-material-btn" class="action-btn"
                     onclick="window.location.href='create-material.php?clase_id=<?php echo $clase_id; ?>'">Crear Material de Clase</button>
             <?php endif; ?>
-        </section>
-        <section class="class-actions">
-            <?php if ($rol_id == 1): ?>
-                <button id="view-rubrics-btn" class="action-btn"
-                    onclick="window.location.href='ver_rubricas.php?clase_id=<?php echo $clase_id; ?>'">Ver Mis Rúbricas</button>
-                <button id="create-class-material-btn" class="action-btn"
-                    onclick="window.location.href='create-material.php?clase_id=<?php echo $clase_id; ?>'">Crear Material de Clase</button>
-            <?php endif; ?>
 
             <button id="leave-class-btn" class="action-btn"
                 onclick="if(confirm('¿Estás seguro de que deseas salir de la clase?')) { window.location.href='salir_de_clase.php?clase_id=<?php echo $clase_id; ?>'; }">
