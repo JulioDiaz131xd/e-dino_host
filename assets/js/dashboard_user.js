@@ -69,5 +69,5 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener("load", function() {
     setTimeout(function() {
       document.querySelector(".loader-wrapper").style.display = "none";
-    }, 3000); 
+    }, 2000); 
 });
