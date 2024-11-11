@@ -23,12 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
+<php
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Crear Clase - E-Dino</title>
-    <link rel="stylesheet" href="../assets/css/dashboard-user.css">
+    <link rel="stylesheet" href="../assets/css/crear_clase.css">
+    <link rel="icon" href="../assets/images/logo.ico">
 </head>
 <body>
     <h2>Crear Nueva Clase</h2>
