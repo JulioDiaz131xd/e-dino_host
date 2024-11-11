@@ -390,3 +390,153 @@ button.delete-criterio {
     font-size: 30px;
   }
   
+  @media (max-width: 1024px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        margin: 1.5rem;
+        padding: 1rem;
+    }
+
+    button {
+        font-size: 0.75rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"], input[type="number"], textarea {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+
+    form {
+        padding: 0;
+    }
+
+    input[type="text"], input[type="number"], textarea {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 0.8rem 0;
+    }
+
+    #save {
+        width: 150px;
+        height: 50px;
+    }
+
+    #add-criterio {
+        width: 150px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+    }
+
+    #save {
+        width: 130px;
+        height: 45px;
+    }
+
+    #add-criterio {
+        width: 130px;
+        height: 45px;
+    }
+
+    .buttonSpan {
+        font-size: 20px;
+    }
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: var(--secondary-color);
+    color: var(--header-text);
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+    background-color: rgba(163, 252, 175, 0.1);
+}
