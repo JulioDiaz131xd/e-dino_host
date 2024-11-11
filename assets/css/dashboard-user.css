@@ -320,9 +320,9 @@ input:focus, textarea:focus {
     --background: linear-gradient(135deg, #23C4F8, #8BCD3A);
     --shadow: #8BCD3A;
     --text: #6C7486;
-    --page: rgba(255, 255, 255, 0.8); /* Color para las páginas */
+    --page: rgba(255, 255, 255, 0.8); 
     --page-fold: rgba(255, 255, 255, 0.6);
-    --duration: 2s; /* Ajusta la velocidad de rotación */
+    --duration: 3s; 
     width: 120px;
     height: 100px;
     position: relative;
@@ -368,8 +368,8 @@ input:focus, textarea:focus {
     --o: 0;
     --c: var(--page);
     position: absolute;
-    width: 100px; /* Ajusta el ancho de las páginas */
-    height: 100px; /* Ajusta la altura de las páginas */
+    width: 100px; 
+    height: 100px; 
     top: 0;
     left: 0;
     transform-origin: left;

@@ -2,26 +2,21 @@
 require_once '../core/models/manage_classes.php';
 
 try {
-    // Verifica si se ha pasado el ID de la clase (ahora es clase_id)
     if (!isset($_GET['clase_id']) || empty($_GET['clase_id'])) {
         throw new Exception("ID de clase no proporcionado.");
     }
 
     $class_id = intval($_GET['clase_id']); // Convierte a entero
 
-    // Instanciar la clase
     $manageClasses = new ManageClasses();
 
-    // Obtener rúbricas por ID de clase
     $rubricas = $manageClasses->getRubricsByClassId($class_id);
 
-    // Cerrar la conexión
     $manageClasses->closeConnection();
 
 } catch (Exception $e) {
-    // Manejo de excepciones
     echo "Se produjo un error: " . htmlspecialchars($e->getMessage());
-    exit; // Detiene la ejecución si hay un error
+    exit; 
 }
 ?>
 
