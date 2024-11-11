@@ -134,7 +134,7 @@ $user->closeConnection();
         let criterioCount = 1;
 
         document.getElementById('add-criterio').addEventListener('click', function() {
-            if (criterioCount < 5) {
+            if (criterioCount < 10) {
                 const tableBody = document.getElementById('criterios-table');
                 const newRow = `
             <tr class="criterio" id="criterio-${criterioCount}">
@@ -157,7 +157,7 @@ $user->closeConnection();
                 tableBody.insertAdjacentHTML('beforeend', newRow);
                 criterioCount++;
             } else {
-                alert("Solo se pueden añadir hasta 5 criterios.");
+                alert("Solo se pueden añadir hasta 10 criterios.");
             }
         });
 
