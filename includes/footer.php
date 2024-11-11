@@ -1,7 +1,4 @@
 <link rel="stylesheet" href="./assets/css/style-footer.css">
-<footer class="footer">
-    <div class="footer-container">
-      
       <!-- Sección de Información General -->
       <div class="footer-section">
         <h3>Sobre E-Dino</h3>
