@@ -19,7 +19,6 @@
           <li><a href="#blog">Blog</a></li>
         </ul>
       </div>
-
       <div class="footer-section">
         <h3>Contáctanos</h3>
         <p>
@@ -32,10 +31,10 @@
       <div class="footer-section">
         <h3>Síguenos</h3>
         <div class="social-icons">
-          <a href="https://facebook.com/e-dino" target="_blank"><img src="icono-facebook.svg" alt="Facebook"></a>
-          <a href="https://twitter.com/e-dino" target="_blank"><img src="icono-twitter.svg" alt="Twitter"></a>
-          <a href="https://linkedin.com/company/e-dino" target="_blank"><img src="icono-linkedin.svg" alt="LinkedIn"></a>
-          <a href="https://instagram.com/e-dino" target="_blank"><img src="icono-instagram.svg" alt="Instagram"></a>
+          <a href="https://facebook.com/e-dino" target="_blank"><img src="./assets/images/icon-fb.svg" alt="Facebook"></a>
+          <a href="https://twitter.com/e-dino" target="_blank"><img src="./assets/images/icon-x.svg" alt="X (Twitter)"></a>
+          <a href="https://linkedin.com/company/e-dino" target="_blank"><img src="./assets/images/icon-linkedin.svg" alt="LinkedIn"></a>
+          <a href="https://instagram.com/e-dino" target="_blank"><img src="./assets/images/icon-ig.svg" alt="Instagram"></a>
         </div>
       </div>
 

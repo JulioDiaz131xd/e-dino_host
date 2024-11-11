@@ -194,6 +194,6 @@ $user->closeConnection();
                 </ul>
             </div><span>Loading</span>
         </div>
-        </div>
+    </div>
 </body>
 </html>
