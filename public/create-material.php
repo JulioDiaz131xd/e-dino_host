@@ -61,48 +61,65 @@ $user->closeConnection();
     </header>
 
     <main>
-    <form action="" method="POST">
-    <div>
-        <label for="rubrica_name">Nombre de la Rúbrica:</label>
-        <input type="text" id="rubrica_name" name="rubrica_name" required>
-    </div>
+        <form action="" method="POST">
+            <div>
+                <label for="rubrica_name">Nombre de la Rúbrica:</label>
+                <input type="text" id="rubrica_name" name="rubrica_name" required>
+            </div>
 
-    <h2>Criterios de Evaluación</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Criterio</th>
-                <th>Excelente (10)</th>
-                <th>Bueno (9)</th>
-                <th>Regular (8)</th>
-                <th>Suficiente (7)</th>
-                <th>Debe mejorar (6)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Dominio del tema</td>
-                <td>Excelente conocimiento del tema. <strong>Valor: 2 pts.</strong></td>
-                <td>Buen conocimiento del tema. <strong>Valor: 1.8 pts.</strong></td>
-                <td>Conocimiento regular del tema. <strong>Valor: 1.6 pts.</strong></td>
-                <td>Poco conocimiento del tema. <strong>Valor: 1.4 pts.</strong></td>
-                <td>Difícil saber si conocen el tema. <strong>Valor: 1.2 pts.</strong></td>
-            </tr>
-            <tr>
-                <td>Comprensión del tema</td>
-                <td>Contesta todas las preguntas. <strong>Valor: 2 pts.</strong></td>
-                <td>Contesta la mayoría de preguntas. <strong>Valor: 1.8 pts.</strong></td>
-                <td>Contesta algunas preguntas. <strong>Valor: 1.6 pts.</strong></td>
-                <td>Contesta pocas preguntas. <strong>Valor: 1.4 pts.</strong></td>
-                <td>No contesta las preguntas. <strong>Valor: 1.2 pts.</strong></td>
-            </tr>
-            <!-- Agrega más criterios aquí -->
-        </tbody>
-    </table>
-
-    <button type="submit">Guardar Rúbrica</button>
-</form>
-
+            <div id="criterios-wrapper">
+                <h2>Agregar Criterios</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Criterio</th>
+                            <th>Descripción</th>
+                            <th>Nivel (%)</th>
+                            <th>Nombre del Nivel</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="criterios-table">
+                        <tr class="criterio" id="criterio-0">
+                            <td><input type="text" name="criterios[0][nombre]" required></td>
+                            <td><textarea name="criterios[0][descripcion]" required></textarea></td>
+                            <td><input type="number" name="criterios[0][nivel]" min="1" max="100" required></td>
+                            <td><input type="text" name="criterios[0][nivel_nombre]" placeholder="Descripción del nivel" required></td>
+                            <td><button type="button" class="delete-criterio noselect" onclick="deleteCriterio(0)">
+                                    <span class="text">Eliminar</span>
+                                    <span class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                            <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                                        </svg>
+                                    </span>
+                                </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="noselect" type="button" id="add-criterio">
+                <span class="text">Agregar</span>
+                <span class="icon">
+                    <svg
+                        viewBox="0 0 24 24"
+                        height="24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                    </svg>
+                    <span class="buttonSpan">+</span>
+                </span>
+            </button>
+            <button type="submit" id="save">
+                <div class="svg-wrapper-1">
+                    <div class="svg-wrapper">
+                        <center><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" class="icon">
+                                <path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"></path>
+                            </svg></center>
+                    </div>
+                </div>
+                <span>Guardar Rúbrica</span>
+            </button>
+        </form>
 
         <?php if ($error): ?>
             <p><?php echo htmlspecialchars($error); ?></p>
