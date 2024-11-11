@@ -87,7 +87,7 @@ $user->closeConnection();
 
         <section class="actions-section">
             <?php if ($rol_id === 1): ?>
-                <button class="action-btn" id="create-class-btn">Crear Clase</button>
+                <a href="crear_clase.php" class="action-btn">Crear Clase</a>
             <?php endif; ?>
             <button class="action-btn" id="join-class-btn">Unirse a una Clase</button>
             <button class="action-btn" id="view-classes-btn">Ver Mis Clases</button>
