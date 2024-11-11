@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once '../core/models/manage_classes.php';
 
 try {
@@ -64,6 +64,7 @@ try {
                             <tr>
                                 <td><?php echo htmlspecialchars($rubrica['nombre']); ?></td>
                                 <td>
+                                    <button onclick="window.location.href='editar_rubrica.php?rubrica_id=<?php echo $rubrica['id']; ?>'">Editar</button>
                                     <button onclick="window.location.href='detalles_rubrica.php?rubrica_id=<?php echo $rubrica['id']; ?>'">Ver Detalles</button>
                                     <a href="eliminar_rubrica.php?rubrica_id=<?php echo $rubrica['id']; ?>" onclick="return confirm('¿Estás seguro de que deseas eliminar esta rúbrica?');">Eliminar</a>
                                 </td>
