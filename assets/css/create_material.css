@@ -285,3 +285,77 @@ button.delete-criterio {
 #save:active {
     transform: scale(0.95);
 }
+
+/* button add */ 
+#add-criterio {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: #00a600;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #00a600;
+  }
+  
+  #add-criterio,
+  #add-criterio span {
+    transition: 200ms;
+  }
+  
+  #add-criterio .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+  }
+  
+  #add-criterio .icon {
+    position: absolute;
+    border-left: 1px solid #007300;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #add-criterio svg {
+    width: 15px;
+    fill: #eee;
+  }
+  
+  #add-criterio:hover {
+    background: #00a600;
+  }
+  
+  #add-criterio:active {
+    background: #00cc00;
+  }
+  
+  #add-criterio:hover .text {
+    color: transparent;
+  }
+  
+  #add-criterio:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+  }
+  
+  #add-criterio:focus {
+    outline: none;
+  }
+  
+  #add-criterio:active .icon svg {
+    transform: scale(0.8);
+  }
+  
+  .buttonSpan {
+    color: white;
+    margin: 150px;
+    font-size: 30px;
+  }
+  
