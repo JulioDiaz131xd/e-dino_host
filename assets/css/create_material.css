@@ -233,12 +233,12 @@ button.delete-criterio {
 
 #save {
     font-family: inherit;
-    font-size: 14px; /* Fuente más pequeña */
+    font-size: 16px; /* Tamaño de fuente más grande para las letras */
     background: #212121;
     color: white;
     fill: rgb(155, 153, 153);
-    width: 60px; /* Aumento el tamaño del botón */
-    height: 60px; /* Aumento la altura para mantenerlo cuadrado */
+    width: 150px; /* Aumento el ancho para que el texto quepa */
+    height: 50px; /* Aumento la altura para que las letras se ajusten */
     display: flex;
     align-items: center;
     justify-content: center; /* Centra el contenido dentro del botón */
@@ -246,17 +246,19 @@ button.delete-criterio {
     border: none;
     border-radius: 10px; /* Bordes ligeramente redondeados */
     font-weight: 700;
-    padding: 0; /* Elimina el padding */
+    padding: 0 1em; /* Agrega un poco de padding horizontal */
 }
 
 #save span {
-    display: none; /* Oculta el texto dentro del botón */
+    display: block;
+    margin-left: 0.5em; /* Espacio entre el ícono y el texto */
+    transition: all 0.3s ease-in-out;
 }
 
 #save svg {
     display: block;
-    width: 30px; /* Ajusta el tamaño del ícono */
-    height: 30px;
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: 20px;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
 }
