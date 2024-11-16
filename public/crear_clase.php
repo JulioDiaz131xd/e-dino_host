@@ -33,7 +33,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <link rel="stylesheet" href="../assets/css/dashboard-user.css">
         <link rel="icon" href="../assets/images/logo.ico">
     </head>
+
     <body>
+        <header class="dashboard-header">
+            <div class="header-container">
+                <h1 class="logo">
+                    <a href="/../index.php">E-Dino</a>
+                </h1>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="dashboard.php"><?php echo htmlspecialchars($nombre_usuario); ?></a></li>
+                        <li><a href="logout.php">Cerrar Sesion</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
         <h2>Crear Nueva Clase</h2>
         <?php if (isset($error)): ?>
             <p><?php echo $error; ?></p>
