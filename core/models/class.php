@@ -90,6 +90,24 @@ class User {
         }
     }
 
+    public function getUserClassProgress($user_id) {
+        $stmt = $this->conn->prepare("SELECT c.nombre, pc.progreso
+                                      FROM progreso_clases pc
+                                      JOIN clases c ON pc.clase_id = c.id
+                                      WHERE pc.usuario_id = ?");
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $progreso = [];
+        while ($row = $result->fetch_assoc()) {
+            $progreso[] = $row;
+        }
+        $stmt->close();
+
+        return $progreso;
+    }
+
     // Cerrar la conexión a la base de datos
     public function closeConnection() {
         $this->conn->close();
