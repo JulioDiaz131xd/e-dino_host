@@ -9,6 +9,7 @@
     --color-button-dark: rgb(139, 205, 58);
     --border-radius: 12px;
     --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s; /* Velocidad de transición */
 }
 
 body {
@@ -17,12 +18,9 @@ body {
     color: var(--color-text-light);
     margin: 0;
     padding: 0;
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--color-text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el footer esté al fondo */
 }
 
 header, footer {
@@ -30,11 +28,34 @@ header, footer {
     color: var(--color-text-dark);
     padding: 20px;
     text-align: center;
+    position: relative;
+    animation: slideIn 0.5s ease-out; /* Animación de entrada */
 }
 
 header a, footer p {
     color: var(--color-text-dark);
     text-decoration: none;
+    font-weight: bold;
+}
+
+header {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    margin-top: auto; /* Asegura que el footer quede abajo */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .main-container {
@@ -44,6 +65,12 @@ header a, footer p {
     background-color: var(--color-background-light);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.main-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .main-container h2 {
@@ -69,6 +96,7 @@ input[type="text"], textarea {
     border: 1px solid #ccc;
     border-radius: var(--border-radius);
     background-color: #fff;
+    transition: border-color var(--transition-speed);
 }
 
 input[type="text"]:focus, textarea:focus {
@@ -87,7 +115,7 @@ input[type="text"]:focus, textarea:focus {
     border-radius: var(--border-radius);
     cursor: pointer;
     box-shadow: var(--box-shadow);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 .submit-btn:hover {
