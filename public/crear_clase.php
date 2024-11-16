@@ -61,6 +61,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit">Crear Clase</button>
         </form>
+        <footer class="dashboard-footer">
+            <div class="footer-container">
+                <p>&copy; <?php echo date("Y"); ?> E-Dino. Todos los derechos reservados.</p>
+                <p>Desarrollado con por el equipo de E-Dino.</p>
+            </div>
+        </footer>
     </body>
-
     </html>
