@@ -27,8 +27,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
-.dashboard-header {
+header {
     background-color: var(--header-bg);
     color: var(--header-text);
     padding: 1rem;
@@ -36,58 +35,25 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-header .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.logo a {
-    color: white;
+header h1 {
     font-size: 2rem;
-    text-decoration: none;
+    font-weight: 600;
 }
 
-.nav-menu ul {
-    list-style-type: none;
-    display: flex;
-}
-
-.nav-menu li {
-    margin-left: 20px;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 15px;
-    border-radius: 5px;
-}
-
-.nav-menu a:hover {
-    background-color: #1c2d54;
-}
-
-/* Main Content */
-h2 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 2rem;
-    color: var(--secondary-color);
-}
-
-form {
-    width: 80%;
-    max-width: 600px;
-    margin: 30px auto;
+main {
+    flex: 1;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 form div {
@@ -140,8 +106,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Footer */
-.dashboard-footer {
+footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
     text-align: center;
@@ -150,21 +115,144 @@ button:hover {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Esto asegura que el footer se quede en el fondo */
 }
 
 footer p {
     font-size: 1rem;
 }
 
-/* Error Message */
-p {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 20px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* Responsive Design */
+thead {
+    background-color: var(--secondary-color);
+    color: var(--header-text);
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+    background-color: rgba(163, 252, 175, 0.1);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+}
+
+input[type="number"]:invalid {
+    border-color: #ff4d4d;
+}
+
+input[type="number"]:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+td input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+button.delete-criterio {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #444; /* Cambié el color de fondo a gris */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 200ms ease-in-out;
+}
+
+button.delete-criterio:hover {
+    background: #555; /* Gris más oscuro */
+}
+
+#save {
+    font-family: inherit;
+    font-size: 18px; 
+    background: #212121;
+    color: white;
+    fill: rgb(155, 153, 153);
+    width: 180px; 
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer;
+    border: none;
+    border-radius: 10px; 
+    font-weight: 700;
+    padding: 0 1.5em; 
+}
+
+#save:hover {
+    background: #000;
+}
+
+#add-criterio {
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: #00a600;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+#add-criterio:hover {
+    background: #00cc00;
+}
+
 @media (max-width: 1024px) {
     header h1 {
         font-size: 1.8rem;
@@ -209,6 +297,10 @@ p {
 
     button {
         padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    table {
         font-size: 0.8rem;
     }
 
