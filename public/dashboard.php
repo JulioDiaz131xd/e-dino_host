@@ -41,14 +41,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'unirse_clase') {
         $codigo = $_POST['class-code'] ?? '';
         $result = $user->joinClassByCode($usuario_id, $codigo);
-
+    
         if ($result === 'success') {
-            echo json_encode(['status' => 'success', 'message' => 'Te has unido a la clase exitosamente.']);
+            // Aquí recuperamos el ID de la clase después de unirse
+            $stmt = $this->conn->prepare("SELECT id FROM clases WHERE codigo = ?");
+            $stmt->bind_param("s", $codigo);
+            $stmt->execute();
+            $stmt->bind_result($clase_id);
+            $stmt->fetch();
+            $stmt->close();
+    
+            echo json_encode(['status' => 'success', 'message' => 'Te has unido a la clase exitosamente.', 'clase_id' => $clase_id]);
         } else {
             echo json_encode(['status' => 'error', 'message' => $result]);
         }
         exit();
     }
+    
 }
 
 $user->closeConnection();

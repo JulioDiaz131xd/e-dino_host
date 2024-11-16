@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const createClassBtn = document.getElementById('create-class-btn');
     const joinClassBtn = document.getElementById('join-class-btn');
-    const viewClassesBtn = document.getElementById('view-classes-btn');
     const createClassModal = document.getElementById('create-class-modal');
     const joinClassModal = document.getElementById('join-class-modal');
     const closeCreateClassModal = document.getElementById('close-create-class-modal');
@@ -25,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         joinClassModal.style.display = 'none';
     });
 
+    // Crear clase: Enviar formulario
     createClassForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             alert(data.message);
             if (data.status === 'success') {
-                createClassModal.style.display = 'none';
+                createClassModal.style.display = 'none'; 
                 location.reload(); 
             }
         })
@@ -58,11 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             alert(data.message);
             if (data.status === 'success') {
-                joinClassModal.style.display = 'none';
-                window.location.href = `gestionar_clase.php?clase_id=${data.clase_id}`;
+                joinClassModal.style.display = 'none'; 
+                if (data.clase_id) {
+                    window.location.href = `gestionar_clase.php?clase_id=${data.clase_id}`;
+                }
             }
         })
         .catch(error => console.error('Error:', error));
     });
 });
-
