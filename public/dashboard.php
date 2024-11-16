@@ -24,16 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($rol_id === 1) {
             $nombre = $_POST['class-name'] ?? '';
             $descripcion = $_POST['class-description'] ?? '';
-            $codigo = generateClassCode(); // Función para generar el código único de clase
 
-            // Crear la clase en la base de datos
-            $result = $user->createClass($usuario_id, $nombre, $descripcion, $codigo);
+            $codigo = $user->createClass($usuario_id, $nombre, $descripcion);
 
-            if ($result === 'success') {
-                // Insertar el usuario en la tabla clases_usuarios para que esté inscrito
-                $user->joinClass($usuario_id, $codigo);
-
-                echo json_encode(['status' => 'success', 'message' => 'Clase creada e inscrito exitosamente.', 'codigo' => $codigo]);
+            if ($codigo) {
+                echo json_encode(['status' => 'success', 'message' => 'Clase creada exitosamente.', 'codigo' => $codigo]);
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'Error al crear la clase.']);
             }
@@ -48,16 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $user->joinClassByCode($usuario_id, $codigo);
 
         if ($result === 'success') {
-            $stmt = $user->conn->prepare("SELECT id FROM clases WHERE codigo = ?");
-            $stmt->bind_param("s", $codigo);
-            $stmt->execute();
-            $stmt->bind_result($clase_id);
-            $stmt->fetch();
-            $stmt->close();
-
-            $insert = $user->joinClass($usuario_id, $codigo);
-            
-            echo json_encode(['status' => 'success', 'message' => 'Te has unido a la clase exitosamente.', 'clase_id' => $clase_id]);
+            echo json_encode(['status' => 'success', 'message' => 'Te has unido a la clase exitosamente.']);
         } else {
             echo json_encode(['status' => 'error', 'message' => $result]);
         }
@@ -66,12 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $user->closeConnection();
-
-function generateClassCode() {
-    return strtoupper(bin2hex(random_bytes(4))); // Genera un código de 8 caracteres
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
