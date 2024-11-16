@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <ul>
                         <li><a href="dashboard.php"><?php echo htmlspecialchars($nombre_usuario); ?></a></li>
                         <li><a href="logout.php">Cerrar Sesion</a></li>
+                        <li><a href="dashboard.php">Volver al Dashboard</a></li>
                     </ul>
                 </nav>
             </div>
