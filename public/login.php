@@ -67,10 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </main>
 
-    <?php
-    // Incluir el footer
-    include '../includes/footer.php';
-    ?>
     <div class="loader-wrapper">
         <div class="loader">
             <div>
