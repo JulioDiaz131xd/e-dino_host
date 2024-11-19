@@ -89,5 +89,5 @@ html, body {
 }
 
 main {
-  flex: 5; /* Crece y ocupa todo el espacio disponible */
+  flex: -1; /* Crece y ocupa todo el espacio disponible */
 }
