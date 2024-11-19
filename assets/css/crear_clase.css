@@ -21,7 +21,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
     background-image: url('../assets/images/font-cc.svg'); /* Reemplaza con la ruta de tu imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+    background-size: auto auto; /* Ajusta la imagen para cubrir toda el área */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-attachment: fixed; /* Fija la imagen al fondo */
     background-position: center; /* Centra la imagen */
