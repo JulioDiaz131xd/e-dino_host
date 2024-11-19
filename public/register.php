@@ -103,7 +103,5 @@ try {
             <p>¿Ya tienes una cuenta? <a href="login.php">Inicia sesión aquí</a>.</p>
         </div>
     </main>
-
-    <?php include '../includes/footer.php'; ?>
 </body>
 </html>
