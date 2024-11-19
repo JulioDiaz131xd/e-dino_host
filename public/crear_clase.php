@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </nav>
             </div>
         </header>
+        <main>
         <h2>Crear Nueva Clase</h2>
         <?php if (isset($error)): ?>
             <p><?php echo $error; ?></p>
@@ -62,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit">Crear Clase</button>
         </form>
+        </main>
         <footer class="dashboard-footer">
             <div class="footer-container">
                 <p>&copy; <?php echo date("Y"); ?> E-Dino. Todos los derechos reservados.</p>
