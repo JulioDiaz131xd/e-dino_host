@@ -65,11 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert(data.message);
                 if (data.status === 'success') {
                     joinClassModal.style.display = 'none';
-                    if (data.clase_id) {
-                        window.location.href = `gestionar_clase.php?clase_id=${data.clase_id}`;
-                    }
+                    location.reload(); // Recargar la página después de unirse a la clase
                 }
             })
             .catch(error => console.error('Error:', error));
     });
 });
+
