@@ -4,11 +4,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['rol_id'] !== 1) {
     header("Location: login.php");
     exit();
 }
-
 require_once __DIR__ . '/../core/models/class.php';
-
 $user = new User();
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['class-name'] ?? '';
     $descripcion = $_POST['class-description'] ?? '';
