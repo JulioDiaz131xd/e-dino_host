@@ -58,24 +58,14 @@ class User {
         return false;
     }
 
-    public function createRubric($rubrica_name, $clase_id) {
+    public function createRubric($rubrica_name, $criterios, $clase_id) {
         $stmt = $this->conn->prepare("INSERT INTO rubricas (nombre, clase_id) VALUES (?, ?)");
-        
-        if (!$stmt) {
-            error_log("Error en la preparación de la consulta: " . $this->conn->error);
-            return false;
-        }
-
         $stmt->bind_param("si", $rubrica_name, $clase_id);
-
-        if (!$stmt->execute()) {
-            error_log("Error al insertar la rúbrica: " . $stmt->error);
-            return false;
-        }
-
+        $result = $stmt->execute();
         $stmt->close();
-        return true;
+        return $result;
     }
+    
 
     public function isUserInClass($user_id, $class_id) {
         $stmt = $this->conn->prepare("SELECT COUNT(*) FROM clases_usuarios WHERE usuario_id = ? AND clase_id = ?");

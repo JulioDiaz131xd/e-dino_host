@@ -8,7 +8,12 @@ if (!isset($_SESSION['user_id'])) {
 require_once __DIR__ . '/../core/models/User.php';
 
 $usuario_id = $_SESSION['user_id'];
-$clase_id = isset($_GET['clase_id']) ? intval($_GET['clase_id']) : 0;
+$clase_id = isset($_POST['clase_id']) ? intval($_POST['clase_id']) : (isset($_GET['clase_id']) ? intval($_GET['clase_id']) : 0);
+
+// Validar clase_id
+if ($clase_id <= 0) {
+    die("Clase ID inválido.");
+}
 
 $user = new User();
 $error = '';
@@ -51,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $user->closeConnection();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -60,12 +66,12 @@ $user->closeConnection();
     <title>Crear Rúbrica de Evaluación - E-Dino</title>
     <link rel="stylesheet" href="../assets/css/create_material.css">
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const form = document.querySelector("form");
             const criteriosTable = document.getElementById("criterios-table");
             const addCriterioButton = document.getElementById("add-criterio");
 
-            form.addEventListener("submit", function (e) {
+            form.addEventListener("submit", function(e) {
                 let totalNivel = 0;
                 const niveles = document.querySelectorAll("input[name^='criterios'][name$='[nivel]']");
                 niveles.forEach(input => {
@@ -78,7 +84,7 @@ $user->closeConnection();
                 }
             });
 
-            addCriterioButton.addEventListener("click", function () {
+            addCriterioButton.addEventListener("click", function() {
                 const criterioCount = criteriosTable.querySelectorAll("tr.criterio").length;
                 if (criterioCount >= 10) {
                     alert("Solo se pueden añadir hasta 10 criterios.");
@@ -106,7 +112,8 @@ $user->closeConnection();
     </header>
 
     <main>
-        <form action="" method="POST">
+        <form action="validaciones_rubrica.php" method="POST">
+            <input type="hidden" name="clase_id" value="<?php echo htmlspecialchars($clase_id); ?>">
             <div>
                 <label for="rubrica_name">Nombre de la Rúbrica:</label>
                 <input type="text" id="rubrica_name" name="rubrica_name" required>
@@ -138,6 +145,7 @@ $user->closeConnection();
             <button type="button" id="add-criterio">Agregar Criterio</button>
             <button type="submit">Guardar Rúbrica</button>
         </form>
+
 
         <?php if ($error): ?>
             <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>

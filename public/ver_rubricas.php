@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../core/models/manage_classes.php';
 
 try {
@@ -9,16 +9,15 @@ try {
     $class_id = intval($_GET['clase_id']); // Convierte a entero
 
     $manageClasses = new ManageClasses();
-
     $rubricas = $manageClasses->getRubricsByClassId($class_id);
-
     $manageClasses->closeConnection();
 
 } catch (Exception $e) {
     echo "Se produjo un error: " . htmlspecialchars($e->getMessage());
-    exit; 
+    exit;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
