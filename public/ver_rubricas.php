@@ -6,7 +6,7 @@ try {
         throw new Exception("ID de clase no proporcionado.");
     }
 
-    $class_id = intval($_GET['clase_id']); // Convierte a entero
+    $class_id = intval($_GET['clase_id']); 
 
     $manageClasses = new ManageClasses();
     $rubricas = $manageClasses->getRubricsByClassId($class_id);
