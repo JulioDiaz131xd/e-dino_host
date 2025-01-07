@@ -1,4 +1,3 @@
-<?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -20,7 +19,7 @@ $progreso_valores_json = json_encode(array_column($progreso, 'progreso'));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'crear_clase') {
-        if (in_array($rol_id, [1, 2])) {
+        if ($rol_id === 1) {
             $nombre = $_POST['class-name'] ?? '';
             $descripcion = $_POST['class-description'] ?? '';
 
@@ -84,7 +83,7 @@ $user->closeConnection();
         </section>
 
         <section class="actions-section">
-            <?php if (in_array($rol_id, [1, 2])): ?>
+            <?php if ($rol_id === 1): ?>
                 <a href="crear_clase.php" class="action-btn">Crear Clase</a>
             <?php endif; ?>
             <button class="action-btn" id="join-class-btn">Unirse a una Clase</button>
