@@ -38,12 +38,10 @@ if (isset($_GET['mensaje'])) {
 if (isset($_GET['error'])) {
     echo '<p style="color: red;">' . htmlspecialchars($_GET['error']) . '</p>';
 }
-
 $user->closeConnection();
 ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +79,6 @@ $user->closeConnection();
                 Salir de la Clase
             </button>
         </section>
-
         <section class="class-members">
             <h2>Miembros de la Clase</h2>
             <?php if (count($miembros_clase) > 0): ?>

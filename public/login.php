@@ -2,13 +2,10 @@
 session_start();
 
 require_once __DIR__ . '/../core/models/User.php';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = new User();
-
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
-
     $loggedInUser = $user->login($email, $password);
 
     if ($loggedInUser) {
@@ -16,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['nombre'] = $loggedInUser['nombre'];
         $_SESSION['rol_id'] = $loggedInUser['rol_id'];
 
-        // Redirección a la raíz
         header("Location: /index.php");
         exit();
     } else {
@@ -42,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
     <?php
-    // Incluir el header
     include '../includes/header.php';
     ?>
 

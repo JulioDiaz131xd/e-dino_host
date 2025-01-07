@@ -11,7 +11,6 @@ $usuario_id = $_SESSION['user_id'];
 $rol_id = $_SESSION['rol_id'];
 
 $user = new User();
-
 $nombre_usuario = $user->getUserNameById($usuario_id);
 $clases = $user->getUserClasses($usuario_id);
 $progreso = $user->getUserClassProgress($usuario_id);
@@ -21,7 +20,7 @@ $progreso_valores_json = json_encode(array_column($progreso, 'progreso'));
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'crear_clase') {
-        if ($rol_id === 1) {
+        if (in_array($rol_id, [1, 2])) {
             $nombre = $_POST['class-name'] ?? '';
             $descripcion = $_POST['class-description'] ?? '';
 
@@ -41,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'unirse_clase') {
         $codigo = $_POST['class-code'] ?? '';
         $result = $user->joinClassByCode($usuario_id, $codigo);
-
         if ($result === 'success') {
             echo json_encode(['status' => 'success', 'message' => 'Te has unido a la clase exitosamente.']);
         } else {
@@ -86,7 +84,7 @@ $user->closeConnection();
         </section>
 
         <section class="actions-section">
-            <?php if ($rol_id === 1): ?>
+            <?php if (in_array($rol_id, [1, 2])): ?>
                 <a href="crear_clase.php" class="action-btn">Crear Clase</a>
             <?php endif; ?>
             <button class="action-btn" id="join-class-btn">Unirse a una Clase</button>

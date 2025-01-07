@@ -64,7 +64,7 @@ class User {
         $result = $stmt->execute();
         $stmt->close();
         return $result;
-    }
+    }-
     
 
     public function isUserInClass($user_id, $class_id) {
@@ -138,7 +138,6 @@ class User {
         return $materiales;
     }
 
-    // Método para obtener las rúbricas por ID de clase
     public function getRubricsByClassId($class_id) {
         $stmt = $this->conn->prepare("SELECT id, nombre FROM rubricas WHERE clase_id = ?");
         
@@ -159,12 +158,12 @@ class User {
     public function closeConnection() {
         $this->conn->close();
     }
-    // User.php
-public function leaveClass($usuario_id, $clase_id) {
-    $sql = "DELETE FROM clases_usuarios WHERE usuario_id = ? AND clase_id = ?";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bind_param("ii", $usuario_id, $clase_id);
-    return $stmt->execute();
+
+    public function leaveClass($usuario_id, $clase_id) {
+        $sql = "DELETE FROM clases_usuarios WHERE usuario_id = ? AND clase_id = ?";
+        $stmt = $this->conn->prepare($sql);
+         $stmt->bind_param("ii", $usuario_id, $clase_id);
+        return $stmt->execute();
 }
 
 }
