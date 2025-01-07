@@ -4,7 +4,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
-
+holaaaaaaa
 require_once __DIR__ . '/../core/models/class.php';
 
 $usuario_id = $_SESSION['user_id'];
